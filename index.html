@@ -16,14 +16,17 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-             margin-top: 90px;
+            margin-top: 90px;
         }
         main {
             margin-top: 80px;
         }
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+            background-image: url('img/LOGODPW.jpg'); /* Reemplaza con la URL de tu imagen */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
             padding: 100px 0;
             text-align: center;
@@ -37,8 +40,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,100 1000,0"/></svg>');
-            background-size: cover;
+            background-color: rgba(0, 0, 0, 0.5); /* Overlay oscuro para mejorar la legibilidad */
         }
         .hero-content {
             max-width: 1200px;
@@ -118,15 +120,39 @@
             display: none;
             position: relative;
             height: 400px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 60px 40px;
         }
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Overlay para mejorar legibilidad */
+        }
         .slide.active {
             display: flex;
+        }
+        .slide:nth-child(1) {
+            background-image: url('img/Image_fx\ \(14\).jpg'); /* Reemplaza con tu URL de imagen */
+        }
+        .slide:nth-child(2) {
+            background-image: url('img/slide2.jpg'); /* Reemplaza con tu URL de imagen */
+        }
+        .slide:nth-child(3) {
+            background-image: url('img/slide3.1.jpg'); /* Reemplaza con tu URL de imagen */
+        }
+        .slide-content {
+            position: relative;
+            z-index: 1;
         }
         .slide-content h3 {
             font-size: 2.5em;
@@ -145,6 +171,7 @@
             transform: translateX(-50%);
             display: flex;
             gap: 10px;
+            z-index: 10;
         }
         .slider-dot {
             width: 12px;
@@ -152,7 +179,7 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.5);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.8s ease;
         }
         .slider-dot.active {
             background: white;
@@ -182,29 +209,32 @@
         }
         .blog-card-image {
             height: 200px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            position: relative;
-            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-        .blog-card-image::before {
-            content: '📚';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 4em;
-            opacity: 0.7;
+        .blog-card:nth-child(1) .blog-card-image {
+            background-image: url('img/LOGODPW.jpg'); /* Reemplaza con tu URL de imagen */
         }
+        .blog-card:nth-child(2) .blog-card-image {
+            background-image: url('url-de-imagen-para-blog-2.jpg'); /* Reemplaza con tu URL de imagen */
+        }
+        .blog-card:nth-child(3) .blog-card-image {
+            background-image: url('url-de-imagen-para-blog-3.jpg'); /* Reemplaza con tu URL de imagen */
+        }
+
         .blog-card-content {
             padding: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2); /* Fondo degradado */
+            color: white; /* Texto en color blanco para mejor contraste */
         }
         .blog-card h3 {
             font-size: 1.4em;
             margin-bottom: 15px;
-            color: #2c3e50;
+            color: white; /* Cambiar a blanco para contraste */
         }
         .blog-card p {
-            color: #666;
+            color: #fff; /* Texto blanco para mejor visibilidad */
             margin-bottom: 20px;
             line-height: 1.6;
         }
@@ -213,16 +243,16 @@
             justify-content: space-between;
             align-items: center;
             font-size: 0.9em;
-            color: #888;
+            color: #fff; /* Cambiar a blanco para contraste */
         }
         .read-more {
-            color: #667eea;
+            color: white;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
         .read-more:hover {
-            color: #764ba2;
+            color: #eee;
         }
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -269,7 +299,7 @@
             opacity: 1;
             transform: translateY(0);
         }
-         .hero-section {
+        .hero-section {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
             color: white;
             padding: 80px 60px;
@@ -277,7 +307,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero-section::before {
             content: '';
             position: absolute;
@@ -288,12 +317,10 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,100 1000,0"/></svg>');
             background-size: cover;
         }
-
         .hero-content {
             position: relative;
             z-index: 1;
         }
-
         .hero-title {
             font-size: 3.5em;
             margin-bottom: 20px;
@@ -301,7 +328,6 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 1s ease-out;
         }
-
         .hero-subtitle {
             font-size: 1.4em;
             margin-bottom: 30px;
@@ -311,13 +337,15 @@
     </style>
 </head>
 <body>
-     <!-- Header -->
+       <!-- Header -->
   <!-- Incluido con JS o directamente en PHP/SSI -->
   <div id="header">
     <!-- Se inyectará desde includes/header.html -->
   </div>
     <main>
         <section class="hero" id="home">
+            <!-- Contenido del hero -->
+
             <div class="hero-content fade-in-up">
                 <h1>Bienvenido</h1>
                 <p>Formamos profesionales competentes con excelencia académica y valores éticos para contribuir al desarrollo tecnológico y social del país.</p>
@@ -330,19 +358,19 @@
                 <div class="slider-container">
                     <div class="slide active">
                         <div class="slide-content">
-                            <h3>SLIDER </h3>
+                            <h3>Ofrecemos programas de estudios actualizados y alineados con las demandas del mercado laboral</h3>
                             <p>Ofrecemos programas de estudios actualizados y alineados con las demandas del mercado laboral, respaldados por docentes altamente calificados.</p>
                         </div>
                     </div>
                     <div class="slide">
                         <div class="slide-content">
-                            <h3>SLIDER</h3>
+                            <h3>Contamos con laboratorios equipados con tecnología de punta</h3>
                             <p>Contamos con laboratorios equipados con tecnología de punta, biblioteca especializada y espacios diseñados para el aprendizaje colaborativo.</p>
                         </div>
                     </div>
                     <div class="slide">
                         <div class="slide-content">
-                            <h3>SLIDER</h3>
+                            <h3>Mantenemos convenios con empresas líderes del sector</h3>
                             <p>Mantenemos convenios con empresas líderes del sector, garantizando oportunidades de prácticas profesionales y empleabilidad.</p>
                         </div>
                     </div>
@@ -365,7 +393,7 @@
                             <p>Conoce las diferentes modalidades de becas disponibles para estudiantes destacados y familias de escasos recursos económicos.</p>
                             <div class="blog-card-meta">
                                 <span>15 de Junio, 2025</span>
-                                </div>
+                            </div>
                         </div>
                     </article>
                     <article class="blog-card scroll-animate">
@@ -375,7 +403,6 @@
                             <p>Firmamos importantes acuerdos con empresas del sector tecnológico para fortalecer la inserción laboral de nuestros egresados.</p>
                             <div class="blog-card-meta">
                                 <span>10 de Junio, 2025</span>
-                                
                             </div>
                         </div>
                     </article>
@@ -394,14 +421,13 @@
         </section>
     </main>
     <script>
-        // Slider functionality
+        // Funcionalidad del slider
         let currentSlideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.slider-dot');
         function showSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-
             slides[index].classList.add('active');
             dots[index].classList.add('active');
         }
@@ -413,9 +439,9 @@
             currentSlideIndex = (currentSlideIndex + 1) % slides.length;
             showSlide(currentSlideIndex);
         }
-        // Auto-advance slides
+        // Avance automático de slides
         setInterval(nextSlide, 5000);
-        // Scroll animations
+        // Animaciones de scroll
         function animateOnScroll() {
             const elements = document.querySelectorAll('.scroll-animate');
             elements.forEach(element => {
@@ -427,7 +453,9 @@
             });
         }
         window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Run on page load
+        animateOnScroll(); // Ejecutar al cargar la página
+    </script>
+
     </script>
           <!-- Footer -->
   <div id="footer">

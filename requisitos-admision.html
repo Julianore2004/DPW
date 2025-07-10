@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Requisitos de Admisión - Programa de Diseño y Programación Web</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -120,10 +122,10 @@
             align-items: center;
         }
 
-        .documents-title::before {
-            content: '📄';
+        .documents-title i {
             margin-right: 15px;
             font-size: 1.2em;
+            color: #667eea;
         }
 
         .documents-list {
@@ -143,10 +145,8 @@
             border-bottom: none;
         }
 
-        .documents-list li::before {
-            content: '✓';
+        .documents-list li i {
             color: #667eea;
-            font-weight: bold;
             margin-right: 15px;
             width: 20px;
             height: 20px;
@@ -170,6 +170,14 @@
             font-size: 1.8em;
             margin-bottom: 25px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fees-title i {
+            margin-right: 15px;
+            font-size: 1.2em;
         }
 
         .fees-table {
@@ -210,6 +218,15 @@
             color: #2c3e50;
             margin-bottom: 25px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .accordion-title i {
+            margin-right: 15px;
+            font-size: 1.2em;
+            color: #667eea;
         }
 
         .accordion-item {
@@ -237,14 +254,12 @@
             background: linear-gradient(135deg, #5a6fd8, #6a4190);
         }
 
-        .accordion-header::after {
-            content: '+';
-            font-size: 1.5em;
-            font-weight: bold;
+        .accordion-header i {
+            font-size: 1.2em;
             transition: transform 0.3s ease;
         }
 
-        .accordion-header.active::after {
+        .accordion-header.active i {
             transform: rotate(45deg);
         }
 
@@ -272,6 +287,15 @@
 
         .accordion-body li {
             margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .accordion-body li i {
+            color: #667eea;
+            margin-right: 10px;
+            margin-top: 5px;
+            font-size: 0.8em;
         }
 
         .vacancies-section {
@@ -286,6 +310,15 @@
             color: #2c3e50;
             margin-bottom: 25px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vacancies-title i {
+            margin-right: 15px;
+            font-size: 1.2em;
+            color: #667eea;
         }
 
         .vacancies-table {
@@ -338,6 +371,15 @@
             color: #2c3e50;
             margin-bottom: 25px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .schedule-title i {
+            margin-right: 15px;
+            font-size: 1.2em;
+            color: #667eea;
         }
 
         .schedule-table {
@@ -491,17 +533,35 @@
             </div>
 
             <div class="documents-section scroll-animate">
-                <h3 class="documents-title">Documentos Requeridos</h3>
+                <h3 class="documents-title">
+                    <i class="fas fa-file-alt"></i>
+                    Documentos Requeridos
+                </h3>
                 <ul class="documents-list">
-                    <li>Copia simple del DNI</li>
-                    <li>Certificado de estudios secundarios</li>
-                    <li>Recibo de pago por derecho de inscripción</li>
-                    <li>Documento que acredite condición de exonerado (si aplica)</li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Copia simple del DNI
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Certificado de estudios secundarios
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Recibo de pago por derecho de inscripción
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Documento que acredite condición de exonerado (si aplica)
+                    </li>
                 </ul>
             </div>
 
             <div class="fees-section scroll-animate">
-                <h3 class="fees-title">Derechos de Inscripción</h3>
+                <h3 class="fees-title">
+                    <i class="fas fa-money-bill-wave"></i>
+                    Derechos de Inscripción
+                </h3>
                 <table class="fees-table">
                     <thead>
                         <tr>
@@ -535,11 +595,15 @@
             </div>
 
             <div class="accordion-section scroll-animate">
-                <h3 class="accordion-title">Modalidades de Admisión</h3>
+                <h3 class="accordion-title">
+                    <i class="fas fa-list-alt"></i>
+                    Modalidades de Admisión
+                </h3>
                 
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>Modalidad Ordinario</span>
+                        <i class="fas fa-plus"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-body">
@@ -551,16 +615,29 @@
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>Por Exoneración</span>
+                        <i class="fas fa-plus"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-body">
                             <p>Contempla la admisión a deportistas calificados, a estudiantes talentosos y a aquellos que están cumpliendo servicio militar voluntario, de conformidad con la normativa vigente.</p>
                             <p><strong>El ingreso por Exoneración será para los egresados de la Educación Básica que acrediten:</strong></p>
                             <ul>
-                                <li>Los Primeros puestos de la educación básica en cualquiera de sus modalidades</li>
-                                <li>Deportistas calificados, acreditados por el Instituto Peruano del Deporte</li>
-                                <li>Las personas víctimas del terrorismo, con acreditación comprobada</li>
-                                <li>Convenios con Instituciones de educación secundaria y/o entidades estatales o privadas en los cuales se haya acordado brindar dicho beneficio</li>
+                                <li>
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Los Primeros puestos de la educación básica en cualquiera de sus modalidades</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Deportistas calificados, acreditados por el Instituto Peruano del Deporte</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Las personas víctimas del terrorismo, con acreditación comprobada</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Convenios con Instituciones de educación secundaria y/o entidades estatales o privadas en los cuales se haya acordado brindar dicho beneficio</span>
+                                </li>
                             </ul>
                             <p><strong>Nota:</strong> En caso de que los postulantes por exoneración sean mayores al de las vacantes ofertadas, se irá cubriendo por evaluación de expedientes.</p>
                         </div>
@@ -570,6 +647,7 @@
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>Por Ingreso Extraordinario</span>
+                        <i class="fas fa-plus"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-body">
@@ -581,14 +659,24 @@
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>Del Examen de Admisión</span>
+                        <i class="fas fa-plus"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-body">
                             <p>El examen de admisión será de tipo objetivo y prevé la calificación anónima, teniendo en cuenta los siguientes criterios:</p>
                             <ul>
-                                <li><strong>Tipo de prueba:</strong> objetiva y de alternativa múltiple (a, b, c, d, e)</li>
-                                <li><strong>La prueba consta de:</strong> 60 preguntas</li>
-                                <li><strong>Duración de la prueba:</strong> 120 minutos</li>
+                                <li>
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span><strong>Tipo de prueba:</strong> objetiva y de alternativa múltiple (a, b, c, d, e)</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span><strong>La prueba consta de:</strong> 60 preguntas</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span><strong>Duración de la prueba:</strong> 120 minutos</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -597,16 +685,29 @@
                 <div class="accordion-item">
                     <div class="accordion-header" onclick="toggleAccordion(this)">
                         <span>Ejecución de la Prueba de Admisión</span>
+                        <i class="fas fa-plus"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-body">
                             <p>El examen de admisión está a cargo de la Comisión Institucional de Admisión del INSTITUTO y, de ser posible, tiene como veedor del examen el representante de la DREA.</p>
                             <p><strong>El examen de admisión considerará los siguientes aspectos:</strong></p>
                             <ul>
-                                <li>Comprensión lectora</li>
-                                <li>Razonamiento lógico matemático</li>
-                                <li>Conocimientos, que pueden incluir conocimientos de secundaria, necesarios para el desarrollo de la especialidad a la cual se postula</li>
-                                <li>Cultura general</li>
+                                <li>
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Comprensión lectora</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Razonamiento lógico matemático</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Conocimientos, que pueden incluir conocimientos de secundaria, necesarios para el desarrollo de la especialidad a la cual se postula</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chevron-right"></i>
+                                    <span>Cultura general</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -614,7 +715,10 @@
             </div>
 
             <div class="vacancies-section scroll-animate">
-                <h3 class="vacancies-title">Cuadro de Vacantes</h3>
+                <h3 class="vacancies-title">
+                    <i class="fas fa-users"></i>
+                    Cuadro de Vacantes
+                </h3>
                 <table class="vacancies-table">
                     <thead>
                         <tr>
@@ -648,7 +752,10 @@
             </div>
 
             <div class="schedule-section scroll-animate">
-                <h3 class="schedule-title">Cronograma del Proceso de Admisión 2026</h3>
+                <h3 class="schedule-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    Cronograma del Proceso de Admisión 2026
+                </h3>
                 <table class="schedule-table">
                     <thead>
                         <tr>

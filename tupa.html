@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TUPA - Programa de Diseño y Programación Web</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -353,6 +355,11 @@
             gap: 10px;
         }
 
+        .info-card-icon {
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
         .info-card-text {
             font-size: 1.1em;
             line-height: 1.6;
@@ -441,53 +448,14 @@
             opacity: 1;
             transform: translateY(0);
         }
-         .hero-section {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
-            color: white;
-            padding: 80px 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,100 1000,0"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-title {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
     </style>
 </head>
 <body>
-     <!-- Header -->
-  <!-- Incluido con JS o directamente en PHP/SSI -->
-  <div id="header">
-    <!-- Se inyectará desde includes/header.html -->
-  </div>
+    <!-- Header -->
+    <div id="header">
+        <!-- Se inyectará desde includes/header.html -->
+    </div>
+    
     <div class="container">
         <section class="hero-section">
             <div class="hero-content">
@@ -495,48 +463,50 @@
                 <p class="hero-subtitle">Texto Único de Procedimientos Administrativos</p>
             </div>
         </section>
-              <section class="content-section">
+        
+        <section class="content-section">
             <h2 class="section-title fade-in-up">TUPA</h2>
             <p class="intro-text fade-in-up">
                 En el programa de estudios de diseño y programación web, nos esforzamos por brindar transparencia y eficiencia en nuestros procesos administrativos. Por eso, te invitamos a conocer nuestro TUPA, un documento que detalla los procedimientos que seguimos para ofrecerte un servicio de calidad.
             </p>
         </section>
+        
         <section class="cta-section scroll-animate">
             <h2 class="cta-title">Consulta Nuestro TUPA</h2>
             <p class="cta-text">
                 Accede al documento completo del TUPA para conocer todos los procedimientos administrativos disponibles. Mantente informado sobre requisitos, plazos y costos de cada trámite.
             </p>
             <button class="tupa-button" onclick="openExternalLink('https://iestphuanta.edu.pe/wp-content/uploads/2025/04/TUPA.pdf')">
-                <span class="button-icon">📋</span>
+                <i class="fas fa-file-alt button-icon"></i>
                 Ver TUPA Completo
             </button>
-         
         </section>
+        
         <section class="benefits-section scroll-animate">
             <h2 class="benefits-title">Beneficios del TUPA</h2>
             <div class="benefits-grid">
                 <div class="benefit-item">
-                    <div class="benefit-icon">✅</div>
+                    <i class="fas fa-check-circle benefit-icon"></i>
                     <p class="benefit-text">Procedimientos claros y definidos</p>
                 </div>
                 <div class="benefit-item">
-                    <div class="benefit-icon">🕐</div>
+                    <i class="fas fa-clock benefit-icon"></i>
                     <p class="benefit-text">Plazos específicos de atención</p>
                 </div>
                 <div class="benefit-item">
-                    <div class="benefit-icon">💰</div>
+                    <i class="fas fa-dollar-sign benefit-icon"></i>
                     <p class="benefit-text">Costos transparentes</p>
                 </div>
                 <div class="benefit-item">
-                    <div class="benefit-icon">📋</div>
+                    <i class="fas fa-list-check benefit-icon"></i>
                     <p class="benefit-text">Requisitos detallados</p>
                 </div>
                 <div class="benefit-item">
-                    <div class="benefit-icon">🎯</div>
+                    <i class="fas fa-bullseye benefit-icon"></i>
                     <p class="benefit-text">Procesos estandarizados</p>
                 </div>
                 <div class="benefit-item">
-                    <div class="benefit-icon">🔄</div>
+                    <i class="fas fa-sync-alt benefit-icon"></i>
                     <p class="benefit-text">Actualizaciones constantes</p>
                 </div>
             </div>
@@ -545,7 +515,7 @@
         <section class="info-cards scroll-animate">
             <div class="info-card">
                 <h3 class="info-card-title">
-                    <span>📖</span>
+                    <i class="fas fa-book-open info-card-icon"></i>
                     ¿Qué encontrarás en el TUPA?
                 </h3>
                 <p class="info-card-text">
@@ -555,7 +525,7 @@
 
             <div class="info-card">
                 <h3 class="info-card-title">
-                    <span>🎓</span>
+                    <i class="fas fa-graduation-cap info-card-icon"></i>
                     Para Estudiantes
                 </h3>
                 <p class="info-card-text">
@@ -565,7 +535,7 @@
 
             <div class="info-card">
                 <h3 class="info-card-title">
-                    <span>👥</span>
+                    <i class="fas fa-users info-card-icon"></i>
                     Transparencia Institucional
                 </h3>
                 <p class="info-card-text">
@@ -573,8 +543,6 @@
                 </p>
             </div>
         </section>
-
-        
     </div>
 
     <script>
@@ -593,8 +561,6 @@
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll(); // Run on page load
 
-        
-
         // Add some interactive effects
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.feature-card, .info-card, .benefit-item');
@@ -609,7 +575,8 @@
                 });
             });
         });
-         // Function to open external links
+
+        // Function to open external links
         function openExternalLink(url) {
             if (url === '#') {
                 alert('Este enlace estará disponible próximamente. Por favor, contacta a la administración para más información.');
@@ -618,10 +585,11 @@
             window.open(url, '_blank', 'noopener,noreferrer');
         }
     </script>
-          <!-- Footer -->
-  <div id="footer">
-    <!-- Se inyectará desde includes/footer.html -->
-  </div>
-  <script src="js/scripts.js"></script>
+    
+    <!-- Footer -->
+    <div id="footer">
+        <!-- Se inyectará desde includes/footer.html -->
+    </div>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

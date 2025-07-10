@@ -17,16 +17,58 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            margin-top: 90px;
+            margin-top: 90PX;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+            color: white;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,100 1000,0"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
         }
 
         .content-section {
@@ -51,17 +93,6 @@
             height: 4px;
             background: linear-gradient(45deg, #667eea, #764ba2);
             border-radius: 2px;
-        }
-
-        .intro-text {
-            font-size: 1.2em;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 50px;
-            text-align: center;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .hierarchy-container {
@@ -89,8 +120,8 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             border: 1px solid rgba(102, 126, 234, 0.1);
-            min-width: 350px;
-            max-width: 450px;
+            min-width: 320px;
+            max-width: 380px;
             position: relative;
             overflow: hidden;
         }
@@ -113,15 +144,15 @@
         }
 
         .person-avatar {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             margin: 0 auto 20px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5em;
+            font-size: 1.8em;
             color: white;
             font-weight: bold;
             transition: all 0.3s ease;
@@ -133,10 +164,11 @@
         }
 
         .person-name {
-            font-size: 1.5em;
+            font-size: 1.3em;
             margin-bottom: 10px;
             font-weight: 700;
             color: #2c3e50;
+            line-height: 1.3;
         }
 
         .person-card:hover .person-name {
@@ -144,7 +176,7 @@
         }
 
         .person-position {
-            font-size: 1.1em;
+            font-size: 1em;
             margin-bottom: 20px;
             color: #667eea;
             font-weight: 600;
@@ -183,7 +215,7 @@
         }
 
         .contact-text {
-            font-size: 0.95em;
+            font-size: 0.9em;
             color: #555;
             font-weight: 500;
         }
@@ -194,9 +226,10 @@
 
         .level-coordinator {
             border-left: 5px solid #667eea;
+            min-width: 400px;
         }
 
-        .level-chief {
+        .level-professor {
             border-left: 5px solid #764ba2;
         }
 
@@ -300,51 +333,18 @@
             font-size: 0.8em;
         }
 
-        .contact-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .contact-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px;
-            font-size: 0.9em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-email {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .btn-email:hover {
-            background: linear-gradient(45deg, #5a67d8, #6b46c1);
-            transform: translateY(-2px);
-        }
-
-        .btn-phone {
-            background: linear-gradient(45deg, #48bb78, #38a169);
-            color: white;
-        }
-
-        .btn-phone:hover {
-            background: linear-gradient(45deg, #38a169, #2f855a);
-            transform: translateY(-2px);
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .content-section {
-                padding: 60px 40px;
+                padding: 60px 30px;
+            }
+
+            .hero-section {
+                padding: 60px 30px;
+            }
+
+            .hero-title {
+                font-size: 2.5em;
             }
 
             .section-title {
@@ -356,20 +356,16 @@
                 max-width: 100%;
             }
 
+            .level-coordinator {
+                min-width: 100%;
+            }
+
             .organizational-chart {
-                padding: 40px;
+                padding: 40px 20px;
             }
 
             .roles-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .contact-buttons {
-                flex-direction: column;
-            }
-
-            .contact-btn {
-                justify-content: center;
             }
         }
 
@@ -411,72 +407,38 @@
         .stagger-animation:nth-child(3) {
             animation-delay: 0.6s;
         }
-         .hero-section {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
-            color: white;
-            padding: 80px 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+
+        .stagger-animation:nth-child(4) {
+            animation-delay: 0.8s;
         }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,100 1000,0"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-title {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.3s both;
+        .stagger-animation:nth-child(5) {
+            animation-delay: 1s;
         }
     </style>
 </head>
 <body>
      <!-- Header -->
-  <!-- Incluido con JS o directamente en PHP/SSI -->
-  <div id="header">
-    <!-- Se inyectará desde includes/header.html -->
-  </div>
+    <div id="header">
+        <!-- Se inyectará desde includes/header.html -->
+    </div>
     <div class="container">
         <section class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">Plana Jerárquica</h1>
-                <p class="hero-subtitle">        Conoce al equipo directivo del Programa de Diseño y Programación Web, profesionales comprometidos con la excelencia académica y el desarrollo integral de nuestros estudiantes.
-          </p>
+                <p class="hero-subtitle">Conoce al equipo directivo del Programa de Diseño y Programación Web, profesionales comprometidos con la excelencia académica y el desarrollo integral de nuestros estudiantes.</p>
             </div>
         </section>
-        <section class="content-section">
-          
-            <p class="intro-text fade-in-up">
-          </p>
 
+        <section class="content-section">
+            <h2 class="section-title">Estructura Organizacional</h2>
+            
             <div class="hierarchy-container">
                 <!-- Nivel 1: Coordinador del Programa -->
                 <div class="hierarchy-level">
-                    <div class="person-card level-coordinator scroll-animate">
+                    <div class="person-card level-coordinator scroll-animate fade-in-up">
                         <div class="person-avatar">JT</div>
-                        <h2 class="person-name">Juan Carlos Torres Lozano</h2>
+                        <h2 class="person-name">Ing. Juan Carlos Torres Lozano</h2>
                         <h3 class="person-position">Coordinador del Área Académica de Diseño y Programación Web</h3>
                         
                         <div class="person-details">
@@ -489,39 +451,50 @@
                                 <span class="contact-text">935 627 200</span>
                             </div>
                         </div>
-
-                       
                     </div>
                 </div>
 
                 <div class="connection-line"></div>
 
-                <!-- Nivel 2: Jefe de Unidad -->
+                <!-- Nivel 2: Equipo Docente -->
                 <div class="hierarchy-level">
-                    <div class="person-card level-chief scroll-animate stagger-animation">
+                    <div class="person-card level-professor scroll-animate stagger-animation">
                         <div class="person-avatar">AM</div>
                         <h2 class="person-name">Lic. Alfonso Álvaro Moreno Márquez</h2>
-                        <h3 class="person-position">Jefe de Unidad de Bienestar y Empleabilidad</h3>
+                        <h3 class="person-position">Profesor del Programa</h3>
                         
-                        <div class="person-details">
-                            <div class="contact-info">
-                                <span class="contact-icon">📧</span>
-                                <span class="contact-text">alfonsoamoreno@hotmail.com</span>
-                            </div>
-                            <div class="contact-info">
-                                <span class="contact-icon">📱</span>
-                                <span class="contact-text">966 903 518</span>
-                            </div>
-                        </div>
+                    
+                    </div>
 
-                       
+                    <div class="person-card level-professor scroll-animate stagger-animation">
+                        <div class="person-avatar">KB</div>
+                        <h2 class="person-name">Tec. Kevin Vlaes Bando Gómez</h2>
+                        <h3 class="person-position">Profesor del Programa</h3>
+                        
+                        
+                    </div>
+
+                    <div class="person-card level-professor scroll-animate stagger-animation">
+                        <div class="person-avatar">AY</div>
+                        <h2 class="person-name">Tec. Aníbal Yucra Curo</h2>
+                        <h3 class="person-position">Profesor del Programa</h3>
+                        
+                     
+                    </div>
+
+                    <div class="person-card level-professor scroll-animate stagger-animation">
+                        <div class="person-avatar">CA</div>
+                        <h2 class="person-name">Ing. Cristhian Alegría Ñaccha</h2>
+                        <h3 class="person-position">Profesor del Programa</h3>
+                        
+                        
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="organizational-chart scroll-animate">
-            <h2 class="chart-title">Estructura Organizacional</h2>
+            <h2 class="chart-title">Roles y Responsabilidades</h2>
             <p class="chart-description">
                 La estructura jerárquica del programa está diseñada para garantizar una gestión eficiente y un acompañamiento integral a los estudiantes a lo largo de su formación académica y profesional.
             </p>
@@ -545,32 +518,15 @@
                 </div>
 
                 <div class="role-card">
-                    <div class="role-title">Jefe de Bienestar y Empleabilidad</div>
-                    <div class="role-description">
-                        Encargado del bienestar estudiantil, orientación profesional y vinculación con el mercado laboral.
-                    </div>
-                    <div class="role-responsibilities">
-                        <h5>Responsabilidades principales:</h5>
-                        <ul>
-                            <li>Programas de bienestar estudiantil</li>
-                            <li>Orientación vocacional y profesional</li>
-                            <li>Vinculación con empresas e instituciones</li>
-                            <li>Gestión de prácticas profesionales</li>
-                            <li>Seguimiento de egresados</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="role-card">
                     <div class="role-title">Equipo Docente</div>
                     <div class="role-description">
-                        Profesionales especializados en las diferentes áreas del diseño y programación web.
+                        Profesionales especializados en las diferentes áreas del diseño y programación web, comprometidos con la excelencia educativa.
                     </div>
                     <div class="role-responsibilities">
                         <h5>Funciones principales:</h5>
                         <ul>
                             <li>Impartir clases teóricas y prácticas</li>
-                            <li>Evaluación del aprendizaje</li>
+                            <li>Evaluación del aprendizaje estudiantil</li>
                             <li>Tutoría académica personalizada</li>
                             <li>Desarrollo de proyectos estudiantiles</li>
                             <li>Actualización continua de conocimientos</li>
@@ -578,7 +534,7 @@
                     </div>
                 </div>
 
-              
+               
             </div>
         </section>
     </div>
@@ -609,6 +565,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -617,28 +574,31 @@
             observer.observe(el);
         });
 
-        // Add hover effects for contact buttons
-        document.querySelectorAll('.contact-btn').forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px) scale(1.05)';
+        // Add smooth hover effects
+        document.querySelectorAll('.person-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
             });
             
-            btn.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(-2px) scale(1)';
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
             });
         });
 
-        // Add click animation for contact buttons
-        document.querySelectorAll('.contact-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+        // Add click animation for person cards
+        document.querySelectorAll('.person-card').forEach(card => {
+            card.addEventListener('click', function(e) {
                 const ripple = document.createElement('span');
                 ripple.style.position = 'absolute';
                 ripple.style.borderRadius = '50%';
                 ripple.style.background = 'rgba(255,255,255,0.6)';
                 ripple.style.transform = 'scale(0)';
                 ripple.style.animation = 'ripple 0.6s linear';
-                ripple.style.left = (e.clientX - e.target.offsetLeft) + 'px';
-                ripple.style.top = (e.clientY - e.target.offsetTop) + 'px';
+                ripple.style.left = (e.clientX - e.target.getBoundingClientRect().left) + 'px';
+                ripple.style.top = (e.clientY - e.target.getBoundingClientRect().top) + 'px';
+                ripple.style.width = '20px';
+                ripple.style.height = '20px';
+                ripple.style.pointerEvents = 'none';
                 
                 this.appendChild(ripple);
                 
@@ -660,10 +620,12 @@
         `;
         document.head.appendChild(style);
     </script>
-          <!-- Footer -->
+    
+ <!-- Footer -->
   <div id="footer">
     <!-- Se inyectará desde includes/footer.html -->
   </div>
+  
   <script src="js/scripts.js"></script>
 </body>
 </html>

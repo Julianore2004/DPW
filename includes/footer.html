@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer - Instituto Tecnológico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -14,14 +16,13 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            
         }
         /* Footer */
         footer {
             background: #2c3e50;
             color: white;
             padding: 60px 0 20px;
-            margin-top: 90px;
+            margin-top: 50px;
         }
         .footer-content {
             max-width: 1200px;
@@ -67,6 +68,7 @@
             line-height: 40px;
             color: white;
             transition: all 0.3s ease;
+            font-size: 20px;
         }
         .social-link:hover {
             background: #667eea;
@@ -79,6 +81,14 @@
             border-top: 1px solid #34495e;
             color: #95a5a6;
         }
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+        .face{
+            max-width: 100px;
+            height: auto;
+        }
         /* Responsive Design */
         @media (max-width: 768px) {
             .footer-content {
@@ -90,43 +100,43 @@
 </head>
 <body>
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Instituto Tecnológico</h3>
-                <p>Comprometidos con la formación integral de profesionales competentes y éticos que contribuyan al desarrollo tecnológico y social.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link">📘</a>
-                    <a href="#" class="social-link">🐦</a>
-                    <a href="#" class="social-link">📸</a>
-                    <a href="#" class="social-link">🎥</a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Accesos Rápidos</h3>
-                <ul class="footer-links">
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#admision">Admisión y Matrícula</a></li>
-                    <li><a href="#tramites">Trámites (TUPA)</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#biblioteca">Biblioteca</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Ubicación</h3>
-                <p>Av. Tecnológica 123<br>
-                San Isidro, Lima - Perú<br>
-                Código Postal: 15036</p>
-            </div>
-            <div class="footer-section">
-                <h3>Horarios de Atención</h3>
-                <p>Lunes a Viernes:<br>8:00 AM - 6:00 PM</p>
-                <p>Sábados:<br>8:00 AM - 1:00 PM</p>
-                <p>Domingos: Cerrado</p>
+    <div class="footer-content">
+        <div class="footer-section">
+            <img src="img/LOGODPW.jpg" alt="Logo" class="logo">
+            <h3>Diseño y Programación Web</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61577626055678" class="social-link" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Instituto Tecnológico. Todos los derechos reservados.</p>
+
+        <div class="footer-section">
+            <h3>Accesos Rápidos</h3>
+            <ul class="footer-links">
+                <li><a href="presentacion.html"><i class="fas fa-info-circle"></i> Nosotros</a></li>
+                <li><a href="requisitos-admision.html"><i class="fas fa-file-signature"></i> Admisión y Matrícula</a></li>
+                <li><a href="tupa.html"><i class="fas fa-file-alt"></i> Trámites (TUPA)</a></li>
+                <li><a href="servicios-complementarios.html"><i class="fas fa-tools"></i> Servicios</a></li>
+                <li><a href="biblioteca.html"><i class="fas fa-book"></i> Biblioteca</a></li>
+            </ul>
         </div>
-    </footer>
+
+        <div class="footer-section">
+            <h3><i class="fas fa-map-marker-alt"></i> Ubicación</h3>
+            <p>Jr. Córdova N° 650<br>Teléfono: (066) 322296</p>
+        </div>
+
+        <div class="footer-section">
+            <h3><i class="fas fa-clock"></i> Horarios de Atención</h3>
+            <p>Lunes a Viernes:<br>7:30 AM - 1:15 PM</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; Diseño y Programación Web | Todos los derechos reservados.</p>
+    </div>
+</footer>
+
 </body>
 </html>

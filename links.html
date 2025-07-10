@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enlaces - Sistemas MINEDU e Institucionales</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -312,61 +314,21 @@
             opacity: 1;
             transform: translateY(0);
         }
-         .hero-section {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
-            color: white;
-            padding: 80px 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,100 1000,0"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-title {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
     </style>
 </head>
 <body>
-     <!-- Header -->
-  <!-- Incluido con JS o directamente en PHP/SSI -->
-  <div id="header">
-    <!-- Se inyectará desde includes/header.html -->
-  </div>
+    <!-- Header -->
+    <div id="header">
+        <!-- Se inyectará desde includes/header.html -->
+    </div>
+    
     <div class="container">
         <section class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">Enlaces Externos</h1>
-                <p class="hero-subtitle">Acceso directo a sistemas MINEDU e institucionales </p>
+                <p class="hero-subtitle">Acceso directo a sistemas MINEDU e institucionales</p>
             </div>
         </section>
-     
 
         <section class="content-section">
             <h2 class="section-title fade-in-up">Sistemas y Plataformas Educativas</h2>
@@ -375,36 +337,44 @@
             </p>
 
             <div class="minedu-section scroll-animate">
-                <h3 class="systems-title">🏛️ Sistemas del MINEDU</h3>
+                <h3 class="systems-title"><i class="fas fa-university"></i> Sistemas del MINEDU</h3>
                 <p class="systems-description">
                     Accede a los principales sistemas del Ministerio de Educación del Perú que facilitan la gestión académica y administrativa de tu formación educativa. Estos sistemas están diseñados para garantizar transparencia, eficiencia y calidad en los procesos educativos.
                 </p>
                 
                 <div class="minedu-grid">
                     <a href="#" class="link-card" onclick="openExternalLink('https://titula.minedu.gob.pe/')">
-                        <span class="external-link">🔗</span>
-                        <div class="link-icon">🎓</div>
+                        <i class="fas fa-external-link-alt external-link"></i>
+                        <div class="link-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
                         <h4 class="link-title">TITULA</h4>
                         <p class="link-description">Sistema de gestión de títulos y certificaciones académicas del MINEDU</p>
                     </a>
 
                     <a href="#" class="link-card" onclick="openExternalLink('https://registra.minedu.gob.pe/#!/')">
-                        <span class="external-link">🔗</span>
-                        <div class="link-icon">📋</div>
+                        <i class="fas fa-external-link-alt external-link"></i>
+                        <div class="link-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
                         <h4 class="link-title">REGISTRA</h4>
                         <p class="link-description">Plataforma de registro y seguimiento académico estudiantil</p>
                     </a>
 
                     <a href="#" class="link-card" onclick="openExternalLink('https://avanza.minedu.gob.pe/')">
-                        <span class="external-link">🔗</span>
-                        <div class="link-icon">📈</div>
+                        <i class="fas fa-external-link-alt external-link"></i>
+                        <div class="link-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
                         <h4 class="link-title">AVANZA</h4>
                         <p class="link-description">Sistema de seguimiento del progreso académico y competencias</p>
                     </a>
 
                     <a href="#" class="link-card" onclick="openExternalLink('https://conecta.minedu.gob.pe/')">
-                        <span class="external-link">🔗</span>
-                        <div class="link-icon">🌐</div>
+                        <i class="fas fa-external-link-alt external-link"></i>
+                        <div class="link-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
                         <h4 class="link-title">CONECTA</h4>
                         <p class="link-description">Plataforma de conexión y comunicación educativa digital</p>
                     </a>
@@ -412,29 +382,35 @@
             </div>
 
             <div class="institutional-section scroll-animate">
-                <h3 class="systems-title">🏫 Sistemas Institucionales</h3>
+                <h3 class="systems-title"><i class="fas fa-school"></i> Sistemas Institucionales</h3>
                 <p class="systems-description">
                     Nuestros sistemas institucionales están diseñados para facilitar la gestión académica, administrativa y de servicios a nuestra comunidad educativa, brindando eficiencia, transparencia y acceso a la información relevante para estudiantes, docentes y personal administrativo.
                 </p>
                 
                 <div class="links-grid">
                     <a href="#" class="link-card" onclick="openExternalLink('https://sispa.iestphuanta.edu.pe/docente/login/')">
-                        <span class="external-link">🔗</span>
-                        <div class="link-icon">👥</div>
+                        <i class="fas fa-external-link-alt external-link"></i>
+                        <div class="link-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
                         <h4 class="link-title">SISPA</h4>
                         <p class="link-description">Sistema Integral de Servicios para Personal Académico</p>
                     </a>
 
                     <a href="#" class="link-card" onclick="openExternalLink('https://iestphuanta.sistema.edu.pe/login/')">
-                        <span class="external-link">🔗</span>
-                        <div class="link-icon">📚</div>
+                        <i class="fas fa-external-link-alt external-link"></i>
+                        <div class="link-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
                         <h4 class="link-title">SIGAEST</h4>
                         <p class="link-description">Sistema Integral de Gestión Académica Estudiantil</p>
                     </a>
 
                     <a href="#" class="link-card" onclick="openExternalLink('https://login.live.com/oauth20_authorize.srf?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&scope=openid+profile+https%3a%2f%2fwww.office.com%2fv2%2fOfficeHome.All&redirect_uri=https%3a%2f%2fwww.office.com%2flandingv2&response_type=code+id_token&state=Q2FjogFfX2POhRJQ89ot6AojTgyVDeTpPL2ugN1sQDS8WrqJ37auIfQVwe2jKTYaLesFfwnjstuh-QX1V_h_8WjyqgHbKBtiO5arcwznAOElhZe5D9dTOuOTzIB3NVfnprRQc2yItfyKUY4PVncl-7980oXHTrWzDS0EHkUYLM6JX3hNhJpcuV3zx-7yV0NgBtwFz2IFi4a_O4dLkcSYxEcuie1HrGJ4ra3UfGn5qzm1XHv0p6RRpbwB6NXeiwGTZRctTXvWi5LpP01r9nl8ZA&response_mode=form_post&nonce=638508188791136893.OTk4Y2VjM2YtNmI4ZS00NzAyLTk3MTctNGIyNDRjOTNkMzk1ODUzMzlmYjctNTA5ZC00M2NjLTg1OTQtZDVlZGFiZDJjODIy&x-client-SKU=ID_NET6_0&x-client-Ver=7.3.1.0&uaid=03d293d96b17493db3d73ac036d1a678&msproxy=1&issuer=mso&tenant=common&ui_locales=es-419&epct=PAQABDgEAAAApTwJmzXqdR4BN2miheQMY0zTAvz7t8ZaaPjHvVUinhQvH8l2WwwIYTQXEkMWzTB_FY9DyErdCF3OoNKVkQBtWlVaHx1gr9unL4igk3XkaWm2g3kKnwE9scfWIclKcwWqkRnGbyI_YiZNzXZ2QMU48uVO-v79vgM0-3kXrJyGCfHcqG2HLS9xYhTjW8APimNCEKmNm_WyIyzmk9FPNKNWafFsOOMoNbVb8feXm6gBc_SAA&jshs=-1&jsh=&jshp=')">
-                        <span class="external-link">🔗</span>
-                        <div class="link-icon">💼</div>
+                        <i class="fas fa-external-link-alt external-link"></i>
+                        <div class="link-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
                         <h4 class="link-title">OFFICE 365</h4>
                         <p class="link-description">Suite de herramientas de productividad y colaboración</p>
                     </a>
@@ -527,10 +503,11 @@
         `;
         document.head.appendChild(style);
     </script>
-          <!-- Footer -->
-  <div id="footer">
-    <!-- Se inyectará desde includes/footer.html -->
-  </div>
-  <script src="js/scripts.js"></script>
+    
+    <!-- Footer -->
+    <div id="footer">
+        <!-- Se inyectará desde includes/footer.html -->
+    </div>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

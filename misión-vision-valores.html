@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Misión, Visión y Valores - Programa de Diseño y Programación Web</title>
+    <!-- Incluyendo Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.7;
@@ -19,7 +20,6 @@
             min-height: 100vh;
              margin-top: 90px;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -28,11 +28,9 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-
         .content-section {
             padding: 80px 60px;
         }
-
         .section-title {
             font-size: 2.5em;
             margin-bottom: 30px;
@@ -40,7 +38,6 @@
             position: relative;
             text-align: center;
         }
-
         .section-title::after {
             content: '';
             position: absolute;
@@ -52,7 +49,6 @@
             background: linear-gradient(45deg, #667eea, #764ba2);
             border-radius: 2px;
         }
-
         .intro-text {
             font-size: 1.2em;
             line-height: 1.8;
@@ -63,7 +59,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .navigation-tabs {
             display: flex;
             justify-content: center;
@@ -71,7 +66,6 @@
             margin-bottom: 60px;
             flex-wrap: wrap;
         }
-
         .nav-tab {
             padding: 15px 30px;
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -85,30 +79,25 @@
             border: 2px solid transparent;
             min-width: 150px;
         }
-
         .nav-tab:hover {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
         .nav-tab.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border-color: #667eea;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
         .content-panel {
             display: none;
             animation: fadeInUp 0.8s ease-out;
         }
-
         .content-panel.active {
             display: block;
         }
-
         .mvv-card {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 60px;
@@ -118,28 +107,17 @@
             border: 1px solid rgba(102, 126, 234, 0.1);
             margin-bottom: 40px;
         }
-
-        .mvv-icon {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5em;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        .mvv-icon i {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            display: block;
         }
-
         .mvv-title {
             font-size: 2.5em;
             margin-bottom: 25px;
             color: #2c3e50;
             font-weight: 700;
         }
-
         .mvv-description {
             font-size: 1.3em;
             line-height: 1.8;
@@ -147,14 +125,12 @@
             max-width: 800px;
             margin: 0 auto;
         }
-
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-
         .value-item {
             background: white;
             padding: 40px;
@@ -164,41 +140,34 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(102, 126, 234, 0.1);
         }
-
         .value-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
-
-        .value-icon {
+        .value-icon i {
             font-size: 3em;
             margin-bottom: 20px;
             display: block;
         }
-
         .value-title {
             font-size: 1.5em;
             margin-bottom: 15px;
             font-weight: 600;
             color: #2c3e50;
         }
-
         .value-item:hover .value-title {
             color: white;
         }
-
         .value-description {
             font-size: 1em;
             line-height: 1.6;
             color: #666;
         }
-
         .value-item:hover .value-description {
             color: rgba(255, 255, 255, 0.9);
         }
-
         .highlight-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -207,70 +176,56 @@
             text-align: center;
             margin-top: 60px;
         }
-
         .highlight-title {
             font-size: 2.2em;
             margin-bottom: 20px;
             font-weight: 700;
         }
-
         .highlight-text {
             font-size: 1.3em;
             line-height: 1.8;
             opacity: 0.9;
         }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .content-section {
                 padding: 60px 40px;
             }
-
             .section-title {
                 font-size: 2em;
             }
-
             .navigation-tabs {
                 flex-direction: column;
                 align-items: center;
             }
-
             .nav-tab {
                 width: 100%;
                 max-width: 300px;
             }
-
             .mvv-card {
                 padding: 40px;
             }
-
             .mvv-icon {
                 width: 100px;
                 height: 100px;
                 font-size: 3em;
             }
-
             .mvv-title {
                 font-size: 2em;
             }
-
             .mvv-description {
                 font-size: 1.1em;
             }
-
             .values-grid {
                 grid-template-columns: 1fr;
             }
-
             .highlight-section {
                 padding: 40px;
             }
-
             .highlight-title {
                 font-size: 1.8em;
             }
         }
-
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -282,17 +237,14 @@
                 transform: translateY(0);
             }
         }
-
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out;
         }
-
         .scroll-animate {
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s ease;
         }
-
         .scroll-animate.visible {
             opacity: 1;
             transform: translateY(0);
@@ -305,7 +257,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero-section::before {
             content: '';
             position: absolute;
@@ -316,12 +267,10 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,100 1000,0"/></svg>');
             background-size: cover;
         }
-
         .hero-content {
             position: relative;
             z-index: 1;
         }
-
         .hero-title {
             font-size: 3.5em;
             margin-bottom: 20px;
@@ -329,7 +278,6 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 1s ease-out;
         }
-
         .hero-subtitle {
             font-size: 1.4em;
             margin-bottom: 30px;
@@ -353,87 +301,77 @@
           </p>
             </div>
         </section>
-        <section class="content-section"> 
+        <section class="content-section">
  <div class="container">
-
             <div class="navigation-tabs">
                 <button class="nav-tab active" onclick="showPanel('mision')">Misión</button>
                 <button class="nav-tab" onclick="showPanel('vision')">Visión</button>
                 <button class="nav-tab" onclick="showPanel('valores')">Valores</button>
             </div>
-
             <div id="mision" class="content-panel active">
                 <div class="mvv-card scroll-animate">
-                    <div class="mvv-icon">🎯</div>
+                    <div class="mvv-icon"><i class="fas fa-bullseye"></i></div>
                     <h2 class="mvv-title">Nuestra Misión</h2>
                     <p class="mvv-description">
                         Formar profesionales integrales en diseño y programación web, combinando creatividad, innovación tecnológica y excelencia académica. Nos comprometemos a desarrollar competencias técnicas y habilidades blandas que permitan a nuestros estudiantes crear soluciones digitales innovadoras y contribuir al crecimiento del sector tecnológico, preparándolos para ser líderes en la transformación digital de las organizaciones.
                     </p>
                 </div>
             </div>
-
             <div id="vision" class="content-panel">
                 <div class="mvv-card scroll-animate">
-                    <div class="mvv-icon">🚀</div>
+                    <div class="mvv-icon"><i class="fas fa-rocket"></i></div>
                     <h2 class="mvv-title">Nuestra Visión</h2>
                     <p class="mvv-description">
                         Ser el programa de referencia en formación de diseñadores y programadores web a nivel nacional, reconocido por la calidad de sus egresados y su contribución a la innovación tecnológica. Aspiramos a liderar la educación digital mediante metodologías pedagógicas innovadoras, alianzas estratégicas con la industria y la generación de talento altamente competitivo que impulse el desarrollo tecnológico del país.
                     </p>
                 </div>
             </div>
-
             <div id="valores" class="content-panel">
                 <div class="mvv-card scroll-animate">
-                    <div class="mvv-icon">💎</div>
+                    <div class="mvv-icon"><i class="fas fa-gem"></i></div>
                     <h2 class="mvv-title">Nuestros Valores</h2>
                     <p class="mvv-description">
                         Los valores que nos definen y guían cada acción en nuestro programa educativo:
                     </p>
                 </div>
-
                 <div class="values-grid">
                     <div class="value-item scroll-animate">
-                        <span class="value-icon">🔥</span>
+                        <span class="value-icon"><i class="fas fa-fire"></i></span>
                         <h3 class="value-title">Excelencia</h3>
                         <p class="value-description">
                             Buscamos la máxima calidad en todos nuestros procesos educativos, desde la enseñanza hasta el desarrollo profesional de nuestros estudiantes.
                         </p>
                     </div>
-
                     <div class="value-item scroll-animate">
-                        <span class="value-icon">💡</span>
+                        <span class="value-icon"><i class="fas fa-lightbulb"></i></span>
                         <h3 class="value-title">Innovación</h3>
                         <p class="value-description">
                             Fomentamos la creatividad y el pensamiento disruptivo para crear soluciones originales y tecnológicamente avanzadas.
                         </p>
                     </div>
-
                     <div class="value-item scroll-animate">
-                        <span class="value-icon">🤝</span>
+                        <span class="value-icon"><i class="fas fa-handshake"></i></span>
                         <h3 class="value-title">Colaboración</h3>
                         <p class="value-description">
                             Promovemos el trabajo en equipo y la construcción colectiva del conocimiento como base del aprendizaje efectivo.
                         </p>
                     </div>
-
                     <div class="value-item scroll-animate">
-                        <span class="value-icon">🎯</span>
+                        <span class="value-icon"><i class="fas fa-bullseye"></i></span>
                         <h3 class="value-title">Compromiso</h3>
                         <p class="value-description">
                             Mantenemos una dedicación constante hacia el crecimiento académico y profesional de cada estudiante.
                         </p>
                     </div>
-
                     <div class="value-item scroll-animate">
-                        <span class="value-icon">🌟</span>
+                        <span class="value-icon"><i class="fas fa-star"></i></span>
                         <h3 class="value-title">Integridad</h3>
                         <p class="value-description">
                             Actuamos con honestidad, transparencia y ética en todas nuestras actividades académicas y profesionales.
                         </p>
                     </div>
-
                     <div class="value-item scroll-animate">
-                        <span class="value-icon">🌍</span>
+                        <span class="value-icon"><i class="fas fa-globe"></i></span>
                         <h3 class="value-title">Inclusión</h3>
                         <p class="value-description">
                             Valoramos la diversidad y creamos un ambiente educativo accesible para todos los estudiantes.
@@ -441,7 +379,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="highlight-section scroll-animate">
                 <h3 class="highlight-title">Comprometidos con tu Futuro</h3>
                 <p class="highlight-text">
@@ -450,7 +387,6 @@
             </div>
         </section>
     </div>
-
     <script>
         function showPanel(panelId) {
             // Hide all panels
@@ -458,20 +394,17 @@
             panels.forEach(panel => {
                 panel.classList.remove('active');
             });
-
             // Remove active class from all tabs
             const tabs = document.querySelectorAll('.nav-tab');
             tabs.forEach(tab => {
                 tab.classList.remove('active');
             });
-
             // Show selected panel
             document.getElementById(panelId).classList.add('active');
-            
+
             // Add active class to clicked tab
             event.target.classList.add('active');
         }
-
         // Scroll animations
         function animateOnScroll() {
             const elements = document.querySelectorAll('.scroll-animate');
@@ -483,7 +416,6 @@
                 }
             });
         }
-
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll(); // Run on page load
     </script>
