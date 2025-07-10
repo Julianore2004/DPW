@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer - Instituto Tecnológico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            
+        }
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 90px;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .footer-section h3 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+        .footer-section p,
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+        .footer-section a:hover {
+            color: #667eea;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            background: #667eea;
+            transform: translateY(-3px);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Instituto Tecnológico</h3>
+                <p>Comprometidos con la formación integral de profesionales competentes y éticos que contribuyan al desarrollo tecnológico y social.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">📸</a>
+                    <a href="#" class="social-link">🎥</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Accesos Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#admision">Admisión y Matrícula</a></li>
+                    <li><a href="#tramites">Trámites (TUPA)</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#biblioteca">Biblioteca</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Ubicación</h3>
+                <p>Av. Tecnológica 123<br>
+                San Isidro, Lima - Perú<br>
+                Código Postal: 15036</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horarios de Atención</h3>
+                <p>Lunes a Viernes:<br>8:00 AM - 6:00 PM</p>
+                <p>Sábados:<br>8:00 AM - 1:00 PM</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Instituto Tecnológico. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación - Programa de Diseño y Programación Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+              margin-top: 90PX;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+            color: white;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,0 1000,100 1000,0"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .content-section {
+            padding: 80px 60px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            position: relative;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .feature-card:hover .feature-title {
+            color: white;
+        }
+
+        .feature-description {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .feature-card:hover .feature-description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .objectives-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 60px;
+            margin: 60px 0;
+            border-radius: 20px;
+        }
+
+        .objectives-title {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .objectives-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .objective-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .objective-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .objective-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .objective-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .statistics-section {
+            padding: 60px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 40px;
+            }
+
+            .hero-title {
+                font-size: 2.5em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2em;
+            }
+
+            .content-section {
+                padding: 60px 40px;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .objectives-section {
+                padding: 40px;
+            }
+
+            .objectives-list {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+  <!-- Incluido con JS o directamente en PHP/SSI -->
+  <div id="header">
+    <!-- Se inyectará desde includes/header.html -->
+  </div>
+
+    <div class="container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Programa de Diseño y Programación Web</h1>
+                <p class="hero-subtitle">Formando profesionales creativos y técnicamente competentes para el mundo digital</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title fade-in-up">Presentación del Programa</h2>
+            <p class="intro-text fade-in-up">
+                Nuestro Programa de Diseño y Programación Web está diseñado para formar profesionales integrales capaces de crear experiencias digitales excepcionales. Combinamos la creatividad del diseño con la solidez técnica de la programación, preparando a nuestros estudiantes para enfrentar los desafíos del mundo digital actual.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card scroll-animate">
+                    <span class="feature-icon">🎨</span>
+                    <h3 class="feature-title">Diseño Creativo</h3>
+                    <p class="feature-description">
+                        Desarrollamos habilidades en diseño visual, experiencia de usuario (UX) y interfaces intuitivas (UI) utilizando las últimas tendencias y herramientas del mercado.
+                    </p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <span class="feature-icon">💻</span>
+                    <h3 class="feature-title">Programación Avanzada</h3>
+                    <p class="feature-description">
+                        Enseñamos lenguajes de programación modernos como HTML5, CSS3, JavaScript, React, Node.js y tecnologías emergentes del desarrollo web.
+                    </p>
+                </div>
+
+                <div class="feature-card scroll-animate">
+                    <span class="feature-icon">🚀</span>
+                    <h3 class="feature-title">Proyectos Reales</h3>
+                    <p class="feature-description">
+                        Los estudiantes trabajan en proyectos reales con empresas y startups, aplicando conocimientos en situaciones profesionales auténticas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="objectives-section scroll-animate">
+            <h2 class="objectives-title">Módulos Profesionales</h2>
+            <div class="objectives-list">
+                <div class="objective-item">
+                    <div class="objective-number">Módulo 1: </div>
+                     <h3 class="feature-title">ANALISIS Y DISEÑO DE SISTEMAS WEB</h3>
+                    <p class="objective-text">
+                    </p>
+                </div>
+                <div class="objective-item">
+                    <div class="objective-number">Módulo 2: </div>
+   <h3 class="feature-title">DESARROLLO DE APLICACIONES WEB</h3>
+                 
+                    <p class="objective-text">
+                    </p>
+                </div>
+                <div class="objective-item">
+                    <div class="objective-number">Módulo 3: </div>
+                       <h3 class="feature-title">DISEÑO DE SERVICIOS WEB</h3>
+                 
+                    <p class="objective-text">
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="statistics-section scroll-animate">
+            <h2 class="section-title">Nuestros Números</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Empleabilidad</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Egresados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Empresas Aliadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Años de Duración</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Scroll animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.scroll-animate');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run on page load
+
+        // Counter animation for statistics
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/[^0-9]/g, ''));
+                const suffix = counter.textContent.replace(/[0-9]/g, '');
+                let count = 0;
+                const increment = target / 100;
+                
+                const updateCounter = () => {
+                    if (count < target) {
+                        count += increment;
+                        counter.textContent = Math.ceil(count) + suffix;
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.textContent = target + suffix;
+                    }
+                };
+                
+                // Start animation when element is visible
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCounter();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                observer.observe(counter);
+            });
+        }
+
+        // Initialize counter animation
+        animateCounters();
+    </script>
+      <!-- Footer -->
+  <div id="footer">
+    <!-- Se inyectará desde includes/footer.html -->
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
