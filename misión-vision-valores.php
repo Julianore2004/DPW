@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misión, Visión y Valores - Programa de Diseño y Programación Web</title>
+    <title>Misión, Visión y Valores - Programa de estudios de Diseño y Programación Web</title>
     <!-- Incluyendo Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -296,7 +296,7 @@
             <div class="hero-content">
                 <h1 class="hero-title">Misión, Visión y Valores</h1>
                 <p class="hero-subtitle">
-                           Conoce los pilares fundamentales que guían nuestro Programa de Diseño y Programación Web. Nuestros principios definen quiénes somos, hacia dónde vamos y cómo trabajamos para formar profesionales excepcionales.
+                           Conoce los pilares fundamentales que guían nuestro Programa de Estudios de Diseño y Programación Web. Nuestros principios definen quiénes somos, hacia dónde vamos y cómo trabajamos para formar profesionales excepcionales.
           </p>
             </div>
         </section>

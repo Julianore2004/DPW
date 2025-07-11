@@ -518,7 +518,7 @@
         <section class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">Requisitos de Admisión</h1>
-                <p class="hero-subtitle">Programa de Diseño y Programación Web</p>
+                <p class="hero-subtitle">Programa de Estudios de Diseño y Programación Web</p>
             </div>
         </section>
        

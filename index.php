@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contenido Principal - Instituto Tecnológico</title>
+    <title>Contenido Principal - DPW</title>
     
 </head>
     <style>

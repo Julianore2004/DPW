@@ -394,7 +394,7 @@
             <div class="hero-content">
                 <h1 class="hero-title">Organización del Programa</h1>
                 <p class="hero-subtitle">
-               El Programa de Diseño y Programación Web cuenta con una estructura organizativa sólida y bien definida que garantiza la calidad educativa, el desarrollo profesional de los estudiantes y la gestión eficiente de los recursos académicos y administrativos.
+               El Programa de Estudios de Diseño y Programación Web cuenta con una estructura organizativa sólida y bien definida que garantiza la calidad educativa, el desarrollo profesional de los estudiantes y la gestión eficiente de los recursos académicos y administrativos.
           </p>
             </div>
         </section>

@@ -428,7 +428,7 @@
         <section class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">Plana Jerárquica</h1>
-                <p class="hero-subtitle">Conoce al equipo directivo del Programa de Diseño y Programación Web, profesionales comprometidos con la excelencia académica y el desarrollo integral de nuestros estudiantes.</p>
+                <p class="hero-subtitle">Conoce al equipo directivo del Programa de Estudios de Diseño y Programación Web, profesionales comprometidos con la excelencia académica y el desarrollo integral de nuestros estudiantes.</p>
             </div>
         </section>
 
