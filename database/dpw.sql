@@ -27,13 +27,12 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `textoimagen`
 --
 
-CREATE TABLE TextoImagen (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    titulo TEXT NOT NULL,
-    textos TEXT NOT NULL,
-    img TEXT NOT NULL
-);
-
+CREATE TABLE `textoimagen` (
+  `id` int(11) NOT NULL,
+  `titulo` text NOT NULL,
+  `textos` text NOT NULL,
+  `img` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `textoimagen`
@@ -54,14 +53,15 @@ INSERT INTO `textoimagen` (`id`, `titulo`, `textos`, `img`) VALUES
 -- Estructura de tabla para la tabla `usuarios`
 --
 
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `usuario` text NOT NULL,
+  `contraseña` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
 --
 -- Volcado de datos para la tabla `usuarios`
 --
-CREATE TABLE Usuarios (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    usuario TEXT NOT NULL UNIQUE,
-    contraseña TEXT NOT NULL
-);
 
 INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`) VALUES
 (1, 'usuario1', 'contraseña1'),

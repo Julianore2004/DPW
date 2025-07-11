@@ -3,13 +3,14 @@ require_once 'database.php';
 
 function obtenerDatos() {
     global $pdo;
-    $stmt = $pdo->query("SELECT * FROM textoimagen");
+    $stmt = $pdo->query("SELECT * FROM textoimagen"); // corregido
     $datos = [];
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $datos[$row['titulo']] = $row;
     }
     return $datos;
 }
+
 
 function obtenerDato($datos, $titulo, $campo) {
     return isset($datos[$titulo][$campo]) ? $datos[$titulo][$campo] : '';
