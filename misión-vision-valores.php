@@ -295,8 +295,7 @@
          <section class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">Misión, Visión y Valores</h1>
-                <p class="hero-subtitle">
-                           Conoce los pilares fundamentales que guían nuestro Programa de Estudios de Diseño y Programación Web. Nuestros principios definen quiénes somos, hacia dónde vamos y cómo trabajamos para formar profesionales excepcionales.
+                <p class="hero-subtitle">Conoce los pilares fundamentales que guían nuestro Programa de Estudios de Diseño y Programación Web. Nuestros principios definen quiénes somos, hacia dónde vamos y cómo trabajamos para formar profesionales excepcionales.
           </p>
             </div>
         </section>
