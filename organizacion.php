@@ -217,6 +217,10 @@
             font-size: 0.85em;
             color: #555;
             line-height: 1.4;
+     text-align: left;
+    display: inline-block;
+
+              
         }
 
         .connection-line {
@@ -419,35 +423,20 @@
                 <div class="connection-line"></div>
 
                 <div class="hierarchy-level">
-                   
-                    <div class="hierarchy-item level-2">
-                        <div class="hierarchy-title">Coordinador Administrativo</div>
-                        <div class="hierarchy-subtitle">Gestión administrativa</div>
-                        <div class="hierarchy-responsibilities">
-                            Recursos humanos, gestión financiera y servicios estudiantiles
-                        </div>
-                    </div>
-                </div>
+    <div class="hierarchy-item level-2">
+        <div class="hierarchy-title">Profesores del Programa de Estudios de Diseño y Programación Web</div>
+        <div class="hierarchy-subtitle">Docentes especializados en tecnología, diseño gráfico y desarrollo web</div>
+        <div class="hierarchy-responsibilities">
+            <ul>
+                <li>Imparten cursos técnicos y prácticos del plan curricular</li>
+                <li>Brindan asesoría en proyectos de innovación tecnológica</li>
+                <li>Participan en actividades académicas y de actualización profesional</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-                <div class="connection-line"></div>
 
-                <div class="hierarchy-level">
-                    <div class="hierarchy-item level-3">
-                        <div class="hierarchy-title">Coordinador de Módulo</div>
-                        <div class="hierarchy-subtitle">Gestión modular</div>
-                        <div class="hierarchy-responsibilities">
-                            Coordinación de asignaturas específicas y seguimiento estudiantil
-                        </div>
-                    </div>
-                 
-                    <div class="hierarchy-item level-3">
-                        <div class="hierarchy-title">Coordinador de Recursos</div>
-                        <div class="hierarchy-subtitle">Recursos tecnológicos</div>
-                        <div class="hierarchy-responsibilities">
-                            Gestión de laboratorios, equipos y plataformas digitales
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 

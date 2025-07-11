@@ -18,7 +18,7 @@
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
-            padding-top: 80px;
+            
         }
         header {
             background: rgba(255, 255, 255, 0.95);
@@ -425,7 +425,6 @@
         </div>
     </header>
 
-   
 
     <script>
         // Smooth scroll
