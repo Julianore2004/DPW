@@ -1,0 +1,35 @@
+-- Crear tabla de Usuarios
+CREATE TABLE Usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    usuario TEXT NOT NULL UNIQUE,
+    contraseña TEXT NOT NULL
+);
+
+-- Crear tabla de TextoImagen
+CREATE TABLE TextoImagen (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo TEXT NOT NULL,
+    textos TEXT NOT NULL,
+    img TEXT NOT NULL
+);
+
+-- Insertar tres usuarios iniciales
+INSERT INTO Usuarios (usuario, contraseña) VALUES
+('usuario1', 'contraseña1'),
+('usuario2', 'contraseña2'),
+('usuario3', 'contraseña3');
+
+-- Insertar algunas entradas de texto-imagen (ajustar según las imágenes disponibles)
+INSERT INTO TextoImagen (titulo, textos, img) VALUES
+('baner', '', 'img/baner.jpeg'),
+('slide1', '', 'img/IMG_8246.JPG'),
+('slide2', '', 'img/IMG_6328.JPG'),
+('slide3', '', 'img/slide3.1.jpg'),
+('blog1', 'Nuevas Oportunidades de Becas 2025
+Conoce las diferentes modalidades de becas disponibles para estudiantes destacados y familias de escasos recursos económicos.', 'img/LOGODPW.jpg'),
+('blog2', 'Convenio con Empresas Tecnológicas
+Firmamos importantes acuerdos con empresas del sector tecnológico para fortalecer la inserción laboral de nuestros egresados.', 'img/LOGODPW.jpg'),
+('blog3', 'Evento de Innovación Tecnológica
+Participamos en la feria de innovación tecnológica más importante del país, presentando proyectos desarrollados por nuestros estudiantes.', 'img/LOGODPW.jpg');
+
+
