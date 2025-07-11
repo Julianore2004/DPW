@@ -579,7 +579,7 @@
     <div class="container">
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title">Programa de estudios: Diseño y Programación Web</h1>
+                <h1 class="hero-title">Programa de Estudios de Diseño y Programación Web</h1>
                 <p class="hero-subtitle">Formando profesionales creativos y técnicamente competentes para el mundo digital.</p>
             </div>
         </section>
