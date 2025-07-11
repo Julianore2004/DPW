@@ -436,7 +436,7 @@
                     <i class=""></i>
                     Plana Docente
                 </h1>
-                <p class="hero-subtitle">Programa de Diseño y Programación Web</p>
+                <p class="hero-subtitle">Programa de Estudios de Diseño y Programación Web</p>
             </div>
         </section>
        
