@@ -278,9 +278,7 @@ $datos = obtenerDatos();
             <nav class="admin-nav">
                 <ul>
                     <li><a href="#" class="active" onclick="showSection('content')"><i class="fas fa-edit"></i> Contenido</a></li>
-                    <li><a href="#" onclick="showSection('images')"><i class="fas fa-images"></i> Imágenes</a></li>
-                    <li><a href="#" onclick="showSection('users')"><i class="fas fa-users"></i> Usuarios</a></li>
-                </ul>
+                    </ul>
             </nav>
         </div>
         
