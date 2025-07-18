@@ -262,9 +262,7 @@
         
         /* RESPONSIVE STYLES */
         @media (max-width: 768px) {
-            body {
-                padding-top: 70px;
-            }
+            
             
             .header-content {
                 height: 70px;
