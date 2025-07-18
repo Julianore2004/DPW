@@ -1,15 +1,7 @@
 <?php
-session_start();
+header('Content-Type: application/json');
 
-// Verificar que el usuario esté autenticado
-if (!isset($_SESSION['admin_logueado'])) {
-    http_response_code(401);
-    echo json_encode(['error' => 'No autorizado']);
-    exit;
-}
-
-// Función para obtener todas las imágenes del directorio
-function obtenerTodasLasImagenes() {
+function obtenerImagenes() {
     $imageDir = '../img/';
     $images = [];
     
@@ -25,24 +17,8 @@ function obtenerTodasLasImagenes() {
         }
     }
     
-    // Ordenar por fecha de modificación (más recientes primero)
-    usort($images, function($a, $b) {
-        $timeA = filemtime('../' . $a);
-        $timeB = filemtime('../' . $b);
-        return $timeB - $timeA;
-    });
-    
     return $images;
 }
 
-// Establecer header para JSON
-header('Content-Type: application/json');
-
-try {
-    $images = obtenerTodasLasImagenes();
-    echo json_encode($images);
-} catch (Exception $e) {
-    http_response_code(500);
-    echo json_encode(['error' => 'Error al cargar imágenes: ' . $e->getMessage()]);
-}
+echo json_encode(obtenerImagenes());
 ?>

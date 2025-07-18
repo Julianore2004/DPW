@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-07-2025 a las 05:58:04
+-- Tiempo de generación: 18-07-2025 a las 03:24:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -39,10 +39,10 @@ CREATE TABLE `textoimagen` (
 --
 
 INSERT INTO `textoimagen` (`id`, `titulo`, `textos`, `img`) VALUES
-(1, 'baner', '', 'img/baner.jpeg'),
-(2, 'slide1', '', 'img/IMG_8246.JPG'),
-(3, 'slide2', '', 'img/IMG_6328.JPG'),
-(4, 'slide3', '', 'img/slide3.1.jpg'),
+(1, 'Bienvenido', 'Formamos profesionales competentes con excelencia académica y valores éticos para contribuir al desarrollo tecnológico y social del país.', 'img/baner.jpeg'),
+(2, 'Ofrecemos programas de estudios actualizados y alineados con las demandas del mercado laboral', '\r\nOfrecemos programas de estudios actualizados y alineados con las demandas del mercado laboral, respaldados por docentes altamente calificados.', 'img/IMG_8246.JPG'),
+(3, 'Contamos con laboratorios equipados con tecnología de punta', '\r\nContamos con laboratorios equipados con tecnología de punta, biblioteca especializada y espacios diseñados para el aprendizaje colaborativo.', 'img/IMG_6328.JPG'),
+(4, 'Mantenemos convenios con empresas líderes del sector', 'Mantenemos convenios con empresas líderes del sector, garantizando oportunidades de prácticas profesionales y empleabilidad.', 'img/slide3.1.jpg'),
 (5, 'Nuevas Oportunidades de Becas 2025', 'Nuevas Oportunidades de Becas 2025: Conoce las diferentes modalidades de becas disponibles para estudiantes destacados.', 'img/1752205935_becas_2023_ch.jpg'),
 (6, 'Convenio con Empresas', 'Convenio con Empresas: Firmamos importantes acuerdos con empresas para fortalecer la inserción laboral de nuestros egresados.', 'img/1752205787_banner_CrearEmpresaenMexico.png'),
 (7, 'WEBINAR', '\"Conectando Ideas, Creando Futuros\"\r\n\r\nParticipa en nuestros webinars y forma parte de espacios virtuales donde el conocimiento, la innovación y la colaboración se unen. A través de estas sesiones en línea, expertos comparten experiencias, tendencias y herramientas clave para impulsar tu crecimiento personal y profesional.', 'img/IMG_8332.JPG');
@@ -56,17 +56,17 @@ INSERT INTO `textoimagen` (`id`, `titulo`, `textos`, `img`) VALUES
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `usuario` text NOT NULL,
-  `contraseña` text NOT NULL
+  `contrasena` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`) VALUES
-(1, 'usuario1', 'contraseña1'),
-(2, 'usuario2', 'contraseña2'),
-(3, 'usuario3', 'contraseña3');
+INSERT INTO `usuarios` (`id`, `usuario`, `contrasena`) VALUES
+(1, 'usuario1', 'admin1'),
+(2, 'usuario2', 'admin2'),
+(3, 'admin2', 'admin3');
 
 --
 -- Índices para tablas volcadas
@@ -93,7 +93,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `textoimagen`
 --
 ALTER TABLE `textoimagen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

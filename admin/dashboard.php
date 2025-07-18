@@ -1,5 +1,5 @@
-
-    <?php
+<?php
+// NO debe haber NADA antes de esta línea (ni espacios, ni BOM)
 session_start();
 if (!isset($_SESSION['admin_logueado'])) {
     header('Location: index.php');
@@ -105,9 +105,14 @@ function obtenerImagenes() {
     return $images;
 }
 
-$datos = obtenerDatos();
+// Obtener datos después de procesar todas las operaciones
+try {
+    $datos = obtenerDatos();
+} catch (Exception $e) {
+    $error = "Error al cargar los datos: " . $e->getMessage();
+    $datos = [];
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -116,186 +121,6 @@ $datos = obtenerDatos();
     <title>Panel Administrativo</title>
     <link rel="stylesheet" href="admin_styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<style>
-        .upload-section {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            border: 2px dashed #dee2e6;
-        }
-        
-        .upload-form {
-            display: flex;
-            gap: 15px;
-            align-items: end;
-            flex-wrap: wrap;
-        }
-        
-        .file-input-group {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .file-input-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-            color: #495057;
-        }
-        
-        .file-input-wrapper {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-        
-        .file-input-wrapper input[type="file"] {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #dee2e6;
-            border-radius: 4px;
-            background: white;
-            cursor: pointer;
-        }
-        
-        .file-input-wrapper input[type="file"]:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-        
-        .btn-upload {
-            padding: 10px 20px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: background 0.3s;
-        }
-        
-        .btn-upload:hover {
-            background: #218838;
-        }
-        
-        .upload-info {
-            width: 100%;
-            margin-top: 10px;
-            font-size: 12px;
-            color: #6c757d;
-        }
-        
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-            max-height: 400px;
-            overflow-y: auto;
-            padding: 10px;
-        }
-        
-        .gallery-item {
-            border: 2px solid #dee2e6;
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            background: white;
-        }
-        
-        .gallery-item:hover {
-            border-color: #007bff;
-            box-shadow: 0 2px 10px rgba(0,123,255,0.1);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 5px;
-        }
-        
-        .gallery-item p {
-            margin: 0;
-            font-size: 11px;
-            color: #6c757d;
-            word-break: break-all;
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-        }
-        
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 0;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 800px;
-            max-height: 80vh;
-            overflow: hidden;
-        }
-        
-        .modal-header {
-            padding: 20px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #dee2e6;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .modal-header h3 {
-            margin: 0;
-            color: #495057;
-        }
-        
-        .close {
-            color: #aaa;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            line-height: 1;
-        }
-        
-        .close:hover {
-            color: #000;
-        }
-        
-        .modal-body {
-            padding: 20px;
-        }
-        
-        .image-preview {
-            width: 100%;
-            height: 120px;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
-        
-        .image-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
-
 </head>
 <body>
     <div class="admin-container">
@@ -316,20 +141,20 @@ $datos = obtenerDatos();
             <div class="admin-header">
                 <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
                 <div class="admin-user">
-                    <span><i class="fas fa-user"></i> <?php echo $_SESSION['admin_usuario']; ?></span>
+                    <span><i class="fas fa-user"></i> <?php echo isset($_SESSION['admin_usuario']) ? $_SESSION['admin_usuario'] : 'Usuario'; ?></span>
                     <a href="logout.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Salir</a>
                 </div>
             </div>
         
             <?php if (isset($mensaje)): ?>
                 <div class="alert alert-success">
-                    <i class="fas fa-check-circle"></i> <?php echo $mensaje; ?>
+                    <i class="fas fa-check-circle"></i> <?php echo htmlspecialchars($mensaje); ?>
                 </div>
             <?php endif; ?>
             
             <?php if (isset($error)): ?>
                 <div class="alert alert-error">
-                    <i class="fas fa-exclamation-triangle"></i> <?php echo $error; ?>
+                    <i class="fas fa-exclamation-triangle"></i> <?php echo htmlspecialchars($error); ?>
                 </div>
             <?php endif; ?>
             
@@ -405,58 +230,64 @@ $datos = obtenerDatos();
                     </div>
                     
                     <div class="content-grid">
-                        <?php foreach ($datos as $id => $item): ?>
-                            <div class="content-card">
-                                <div class="card-header">
-                                    <h3><i class="fas fa-file-alt"></i> <?php echo htmlspecialchars($item['titulo']); ?></h3>
-                                    <span class="card-id">#<?php echo $id; ?></span>
-                                </div>
-                                
-                                <div class="card-preview">
-                                    <div class="image-preview">
-                                        <img src="../<?php echo htmlspecialchars($item['img']); ?>" alt="Preview" onerror="this.src='../img/default.jpg'">
-                                    </div>
-                                </div>
-                                
-                                <form method="POST" class="edit-form">
-                                    <input type="hidden" name="id" value="<?php echo $id; ?>">
-                                    <input type="hidden" name="update_content" value="1">
-                                    
-                                    <div class="form-group">
-                                        <label><i class="fas fa-heading"></i> Título:</label>
-                                        <input type="text" name="titulo" value="<?php echo htmlspecialchars($item['titulo']); ?>" required>
+                        <?php if (!empty($datos)): ?>
+                            <?php foreach ($datos as $id => $item): ?>
+                                <div class="content-card">
+                                    <div class="card-header">
+                                        <h3><i class="fas fa-file-alt"></i> <?php echo htmlspecialchars($item['titulo']); ?></h3>
+                                        <span class="card-id">#<?php echo $id; ?></span>
                                     </div>
                                     
-                                    <div class="form-group">
-                                        <label><i class="fas fa-align-left"></i> Texto:</label>
-                                        <textarea name="textos" rows="4" placeholder="Escribe el contenido aquí..."><?php echo htmlspecialchars($item['textos']); ?></textarea>
+                                    <div class="card-preview">
+                                        <div class="image-preview">
+                                            <img src="../<?php echo htmlspecialchars($item['img']); ?>" alt="Preview" onerror="this.src='../img/default.jpg'">
+                                        </div>
                                     </div>
                                     
-                                    <div class="form-group">
-                                        <label><i class="fas fa-image"></i> Imagen:</label>
-                                        <div class="image-input-group">
-                                            <input type="text" name="img" id="img_<?php echo $id; ?>" value="<?php echo htmlspecialchars($item['img']); ?>" required>
-                                            <button type="button" class="btn-browse" onclick="openImageSelector(<?php echo $id; ?>)">
-                                                <i class="fas fa-folder-open"></i> Seleccionar
+                                    <form method="POST" class="edit-form">
+                                        <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                        <input type="hidden" name="update_content" value="1">
+                                        
+                                        <div class="form-group">
+                                            <label><i class="fas fa-heading"></i> Título:</label>
+                                            <input type="text" name="titulo" value="<?php echo htmlspecialchars($item['titulo']); ?>" required>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label><i class="fas fa-align-left"></i> Texto:</label>
+                                            <textarea name="textos" rows="4" placeholder="Escribe el contenido aquí..."><?php echo htmlspecialchars($item['textos']); ?></textarea>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label><i class="fas fa-image"></i> Imagen:</label>
+                                            <div class="image-input-group">
+                                                <input type="text" name="img" id="img_<?php echo $id; ?>" value="<?php echo htmlspecialchars($item['img']); ?>" required>
+                                                <button type="button" class="btn-browse" onclick="openImageSelector(<?php echo $id; ?>)">
+                                                    <i class="fas fa-folder-open"></i> Seleccionar
+                                                </button>
+                                            </div>
+                                            <small><i class="fas fa-info-circle"></i> Selecciona una imagen de la galería</small>
+                                        </div>
+                                        
+                                        <div class="form-actions">
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="fas fa-save"></i> Guardar Cambios
+                                            </button>
+                                            <button type="button" class="btn btn-secondary" onclick="resetForm(this)">
+                                                <i class="fas fa-undo"></i> Resetear
+                                            </button>
+                                            <button type="button" class="btn btn-danger" onclick="confirmDelete(<?php echo $id; ?>)">
+                                                <i class="fas fa-trash"></i> Eliminar
                                             </button>
                                         </div>
-                                        <small><i class="fas fa-info-circle"></i> Selecciona una imagen de la galería</small>
-                                    </div>
-                                    
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="fas fa-save"></i> Guardar Cambios
-                                        </button>
-                                        <button type="button" class="btn btn-secondary" onclick="resetForm(this)">
-                                            <i class="fas fa-undo"></i> Resetear
-                                        </button>
-                                        <button type="button" class="btn btn-danger" onclick="confirmDelete(<?php echo $id; ?>)">
-                                            <i class="fas fa-trash"></i> Eliminar
-                                        </button>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <div class="no-content">
+                                <p>No hay contenido disponible. Crea el primer registro.</p>
                             </div>
-                        <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
