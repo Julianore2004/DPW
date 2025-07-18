@@ -14,12 +14,14 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
-            
+           
         }
+        
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(15px);
@@ -31,6 +33,7 @@
             transition: all 0.3s ease;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
+        
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -41,11 +44,14 @@
             height: 80px;
             position: relative;
         }
+        
         .logo {
             display: flex;
             align-items: center;
             gap: 15px;
+            z-index: 1001;
         }
+        
         .logo-img img {
             width: 60px;
             height: 60px;
@@ -54,37 +60,39 @@
             transition: all 0.5s ease;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
         }
+        
         .logo-img:hover img {
             transform: scale(1.1) rotate(5deg);
         }
+        
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
+        
         .logo-img img {
             animation: pulse 4s infinite;
         }
+        
         .logo-text {
             font-size: 18px;
             font-weight: 600;
+            line-height: 1.2;
         }
+        
         .logo-text-light {
             font-weight: 400;
             color: #667eea;
             animation: fadeIn 2s ease-in-out;
         }
+        
         .logo-text-bold {
             font-weight: 700;
             color: #764ba2;
             animation: fadeIn 2s ease-in-out 0.5s both;
         }
+        
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -95,18 +103,22 @@
                 transform: translateY(0);
             }
         }
+        
         nav {
             display: flex;
             align-items: center;
         }
+        
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 10px;
         }
+        
         .nav-item {
             position: relative;
         }
+        
         .nav-link {
             text-decoration: none;
             color: #2c3e50;
@@ -120,25 +132,30 @@
             gap: 8px;
             font-size: 14px;
         }
+        
         .nav-link i {
             font-size: 16px;
             transition: all 0.3s ease;
         }
+        
         .nav-link:hover {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
+        
         .nav-link:hover i {
             transform: scale(1.2);
         }
+        
         .nav-link.active {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             font-weight: 600;
             box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
         }
+        
         .dropdown {
             position: absolute;
             top: 100%;
@@ -155,11 +172,13 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
         }
+        
         .nav-item:hover .dropdown {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
+        
         .dropdown-item {
             padding: 15px 20px;
             color: #2c3e50;
@@ -170,26 +189,32 @@
             transition: all 0.3s ease;
             font-size: 14px;
         }
+        
         .dropdown-item i {
             font-size: 16px;
             color: #667eea;
             transition: all 0.3s ease;
         }
+        
         .dropdown-item:hover {
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             padding-left: 25px;
             color: #667eea;
         }
+        
         .dropdown-item:hover i {
             transform: scale(1.2);
             color: #764ba2;
         }
+        
         .dropdown-item:first-child {
             border-radius: 15px 15px 0 0;
         }
+        
         .dropdown-item:last-child {
             border-radius: 0 0 15px 15px;
         }
+        
         .mobile-menu-toggle {
             display: none;
             background: linear-gradient(135deg, #667eea, #764ba2);
@@ -200,93 +225,14 @@
             padding: 12px;
             border-radius: 10px;
             transition: all 0.3s ease;
+            z-index: 1001;
         }
+        
         .mobile-menu-toggle:hover {
             transform: scale(1.1);
             box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
         }
-        @media (max-width: 768px) {
-            .header-content {
-                height: 70px;
-            }
-            .logo-text {
-                font-size: 16px;
-            }
-            .logo-img img {
-                width: 50px;
-                height: 50px;
-            }
-            nav {
-                flex-direction: column;
-                align-items: flex-end;
-            }
-            .mobile-menu-toggle {
-                display: block;
-            }
-            .nav-menu {
-                flex-direction: column;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(20px);
-                width: 100%;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                padding: 20px 0;
-                display: none;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            }
-            .nav-menu.open {
-                display: flex;
-                animation: slideDown 0.3s ease-out;
-            }
-            @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            .nav-item {
-                width: 100%;
-                text-align: center;
-            }
-            .nav-link {
-                justify-content: center;
-                margin: 0 20px;
-            }
-            .dropdown {
-                position: static;
-                box-shadow: none;
-                border-radius: 0;
-                transform: none;
-                visibility: visible;
-                opacity: 1;
-                display: none;
-                background: rgba(248, 249, 250, 0.9);
-                margin: 0 20px;
-                border-radius: 10px;
-                margin-top: 10px;
-            }
-            .nav-item.open .dropdown {
-                display: block;
-                animation: fadeInUp 0.3s ease-out;
-            }
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        }
-        /* Efectos adicionales */
+        
         .nav-link::before {
             content: '';
             position: absolute;
@@ -299,10 +245,11 @@
             transition: width 0.3s ease;
             z-index: -1;
         }
+        
         .nav-link:hover::before {
             width: 100%;
         }
-        /* Scroll indicator */
+        
         .scroll-indicator {
             position: fixed;
             top: 0;
@@ -312,15 +259,216 @@
             z-index: 1001;
             transition: width 0.3s ease;
         }
+        
+        /* RESPONSIVE STYLES */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .header-content {
+                height: 70px;
+                padding: 0 15px;
+            }
+            
+            .logo {
+                gap: 10px;
+            }
+            
+            .logo-text {
+                font-size: 14px;
+            }
+            
+            .logo-img img {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                padding: 20px 0;
+                display: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+            
+            .nav-menu.open {
+                display: flex;
+                animation: slideDown 0.3s ease-out;
+            }
+            
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .nav-item {
+                width: 100%;
+            }
+            
+            .nav-link {
+                justify-content: flex-start;
+                margin: 0 20px;
+                padding: 15px 20px;
+                border-radius: 10px;
+                font-size: 16px;
+            }
+            
+            .nav-link i {
+                font-size: 18px;
+            }
+            
+            .dropdown {
+                position: static;
+                box-shadow: none;
+                border-radius: 0;
+                transform: none;
+                visibility: visible;
+                opacity: 1;
+                display: none;
+                background: rgba(248, 249, 250, 0.9);
+                margin: 0 20px;
+                border-radius: 10px;
+                margin-top: 10px;
+                border: 1px solid rgba(102, 126, 234, 0.2);
+            }
+            
+            .nav-item.open .dropdown {
+                display: block;
+                animation: fadeInUp 0.3s ease-out;
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .dropdown-item {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            
+            .dropdown-item:hover {
+                padding-left: 30px;
+            }
+            
+            /* Indicador de dropdown en móvil */
+            .nav-item:has(.dropdown) .nav-link::after {
+                content: '\f107';
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                margin-left: auto;
+                transition: transform 0.3s ease;
+            }
+            
+            .nav-item.open .nav-link::after {
+                transform: rotate(180deg);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-content {
+                padding: 0 10px;
+            }
+            
+            .logo-text {
+                font-size: 12px;
+            }
+            
+            .logo-img img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .nav-link {
+                margin: 0 10px;
+                padding: 12px 15px;
+                font-size: 15px;
+            }
+            
+            .dropdown {
+                margin: 0 10px;
+            }
+            
+            .dropdown-item {
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+        }
+        
+        /* Demo content para mostrar el scroll */
+        .demo-content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: #f8f9fa;
+            margin: 20px 0;
+            padding: 60px 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .demo-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        
+        .demo-section p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-section {
+                padding: 40px 20px;
+            }
+            
+            .demo-section h2 {
+                font-size: 2em;
+            }
+            
+            .demo-section p {
+                font-size: 1.1em;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="scroll-indicator"></div>
     <header>
         <div class="header-content">
-            <div class="logo">
-                <div class="logo-img">
-                    <img src="img/LOGODPW.jpg" alt="Logo">
+            <div  class="logo">
+                <div  class="logo-img">
+                    <img  src="img/LOGODPW.jpg" alt="Logo">
                 </div>
                 <span class="logo-text">
                     <span class="logo-text-light">DISEÑO Y</span><br>
@@ -342,7 +490,7 @@
                         </a>
                         <div class="dropdown">
                             <a href="presentacion" class="dropdown-item">
-                                <i class="fas fa-presentation"></i>
+                                <i class="fas fa-users"></i>
                                 Presentación
                             </a>
                             <a href="misión-vision-valores" class="dropdown-item">
@@ -425,7 +573,7 @@
         </div>
     </header>
 
-
+   
     <script>
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -434,6 +582,16 @@
                 if (target) {
                     e.preventDefault();
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    // Cerrar menú móvil después de hacer clic
+                    if (window.innerWidth <= 768) {
+                        const navMenu = document.querySelector('.nav-menu');
+                        const toggleBtn = document.querySelector('.mobile-menu-toggle');
+                        navMenu.classList.remove('open');
+                        const icon = toggleBtn.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
                 }
             });
         });
@@ -474,13 +632,19 @@
             }
         });
 
+        // Dropdown functionality for mobile
         navItems.forEach(item => {
-            item.addEventListener('click', function (e) {
-                if (window.innerWidth <= 768 && item.querySelector('.dropdown')) {
-                    e.preventDefault();
-                    this.classList.toggle('open');
-                }
-            });
+            const link = item.querySelector('.nav-link');
+            const dropdown = item.querySelector('.dropdown');
+            
+            if (dropdown) {
+                link.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        item.classList.toggle('open');
+                    }
+                });
+            }
         });
 
         // Cerrar menú móvil al hacer clic fuera
@@ -490,26 +654,16 @@
                 const icon = toggleBtn.querySelector('i');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+                
+                // Cerrar todos los dropdowns abiertos
+                navItems.forEach(item => {
+                    item.classList.remove('open');
+                });
             }
         });
 
-        // Efecto de typing para el logo
-        function typeWriter(element, text, speed) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Inicializar efectos cuando la página carga
+        // Efecto de aparición suave para todos los elementos del nav
         window.addEventListener('load', function() {
-            // Efecto de aparición suave para todos los elementos del nav
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach((link, index) => {
                 link.style.opacity = '0';
@@ -520,6 +674,19 @@
                     link.style.transform = 'translateY(0)';
                 }, index * 100);
             });
+        });
+
+        // Cerrar dropdowns al cambiar tamaño de ventana
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('open');
+                navItems.forEach(item => {
+                    item.classList.remove('open');
+                });
+                const icon = toggleBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         });
     </script>
 </body>

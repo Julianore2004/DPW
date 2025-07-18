@@ -514,76 +514,73 @@
     <?php include 'includes/header.php'; ?>
     
     <main>
-        <section class="hero" id="home" style="background-image: url('<?php echo obtenerDato($datos, 'baner', 'img'); ?>');">
-            <div class="hero-content fade-in-up">
-                <h1>Bienvenido</h1>
-                <p>Formamos profesionales competentes con excelencia académica y valores éticos para contribuir al desarrollo tecnológico y social del país.</p>
-                <a href="#blog" class="cta-button">Explorar Nuestro Blog</a>
-            </div>
-        </section>
+       <section class="hero" id="home" style="background-image: url('<?php echo obtenerDatoPorId($datos, 1, 'img'); ?>');">
+    <div class="hero-content fade-in-up">
+        <h1><?php echo obtenerDatoPorId($datos, 1, 'titulo'); ?></h1>
+        <p><?php echo obtenerDatoPorId($datos, 1, 'textos'); ?></p>
+        <a href="#blog" class="cta-button">Explorar Nuestro Blog</a>
+    </div>
+</section>
 
-        <section class="slider-section">
-            <div class="container">
-                <h2 class="section-title scroll-animate">Destacados</h2>
-                <div class="slider-container">
-                    <div class="slide active" style="background-image: url('<?php echo obtenerDato($datos, 'slide1', 'img'); ?>');">
-                        <div class="slide-content">
-                            <h3>Ofrecemos programas de estudios actualizados y alineados con las demandas del mercado laboral</h3>
-                            <p>Ofrecemos programas de estudios actualizados y alineados con las demandas del mercado laboral, respaldados por docentes altamente calificados.</p>
-                        </div>
-                    </div>
-                    <div class="slide" style="background-image: url('<?php echo obtenerDato($datos, 'slide2', 'img'); ?>');">
-                        <div class="slide-content">
-                            <h3>Contamos con laboratorios equipados con tecnología de punta</h3>
-                            <p>Contamos con laboratorios equipados con tecnología de punta, biblioteca especializada y espacios diseñados para el aprendizaje colaborativo.</p>
-                        </div>
-                    </div>
-                    <div class="slide" style="background-image: url('<?php echo obtenerDato($datos, 'slide3', 'img'); ?>');">
-                        <div class="slide-content">
-                            <h3>Mantenemos convenios con empresas líderes del sector</h3>
-                            <p>Mantenemos convenios con empresas líderes del sector, garantizando oportunidades de prácticas profesionales y empleabilidad.</p>
-                        </div>
-                    </div>
-                    <div class="slider-nav">
-                        <span class="slider-dot active" onclick="currentSlide(1)"></span>
-                        <span class="slider-dot" onclick="currentSlide(2)"></span>
-                        <span class="slider-dot" onclick="currentSlide(3)"></span>
-                    </div>
+<section class="slider-section">
+    <div class="container">
+        <h2 class="section-title scroll-animate">Destacados</h2>
+        <div class="slider-container">
+            <div class="slide active" style="background-image: url('<?php echo obtenerDatoPorId($datos, 2, 'img'); ?>');">
+                <div class="slide-content">
+                    <h3><?php echo obtenerDatoPorId($datos, 2, 'titulo'); ?></h3>
+                    <p><?php echo obtenerDatoPorId($datos, 2, 'textos'); ?></p>
                 </div>
             </div>
-        </section>
-
-        <section class="blog-section" id="blog">
-            <div class="container">
-                <h2 class="section-title scroll-animate">Blog Informativo</h2>
-                <div class="blog-grid">
-                    <article class="blog-card scroll-animate">
-                        <div class="blog-card-image" style="background-image: url('<?php echo obtenerDato($datos, 'Nuevas Oportunidades de Becas 2025', 'img'); ?>');"></div>
-                        <div class="blog-card-content">
-                            <h3><?php echo obtenerDato($datos, 'Nuevas Oportunidades de Becas 2025', 'titulo'); ?></h3>
-                            <p><?php echo obtenerDato($datos, 'Nuevas Oportunidades de Becas 2025', 'textos'); ?></p>
-                           
-                        </div>
-                    </article>
-                    <article class="blog-card scroll-animate">
-                        <div class="blog-card-image" style="background-image: url('<?php echo obtenerDato($datos, 'Convenio con Empresas', 'img'); ?>');"></div>
-                        <div class="blog-card-content">
-                            <h3><?php echo obtenerDato($datos, 'Convenio con Empresas', 'titulo'); ?></h3>
-                            <p><?php echo obtenerDato($datos, 'Convenio con Empresas', 'textos'); ?></p>
-                           
-                        </div>
-                    </article>
-                    <article class="blog-card scroll-animate">
-                        <div class="blog-card-image" style="background-image: url('<?php echo obtenerDato($datos, 'WEBINAR', 'img'); ?>');"></div>
-                        <div class="blog-card-content">
-                            <h3><?php echo obtenerDato($datos, 'WEBINAR', 'titulo'); ?></h3>
-                            <p><?php echo obtenerDato($datos, 'WEBINAR', 'textos'); ?></p>
-                          
-                        </div>
-                    </article>
+            <div class="slide" style="background-image: url('<?php echo obtenerDatoPorId($datos, 3, 'img'); ?>');">
+                <div class="slide-content">
+                    <h3><?php echo obtenerDatoPorId($datos, 3, 'titulo'); ?></h3>
+                    <p><?php echo obtenerDatoPorId($datos, 3, 'textos'); ?></p>
                 </div>
             </div>
-        </section>
+            <div class="slide" style="background-image: url('<?php echo obtenerDatoPorId($datos, 4, 'img'); ?>');">
+                <div class="slide-content">
+                    <h3><?php echo obtenerDatoPorId($datos, 4, 'titulo'); ?></h3>
+                    <p><?php echo obtenerDatoPorId($datos, 4, 'textos'); ?></p>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <span class="slider-dot active" onclick="currentSlide(1)"></span>
+                <span class="slider-dot" onclick="currentSlide(2)"></span>
+                <span class="slider-dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-section" id="blog">
+    <div class="container">
+        <h2 class="section-title scroll-animate">Blog Informativo</h2>
+        <div class="blog-grid">
+            <article class="blog-card scroll-animate">
+                <div class="blog-card-image" style="background-image: url('<?php echo obtenerDatoPorId($datos, 5, 'img'); ?>');"></div>
+                <div class="blog-card-content">
+                    <h3><?php echo obtenerDatoPorId($datos, 5, 'titulo'); ?></h3>
+                    <p><?php echo obtenerDatoPorId($datos, 5, 'textos'); ?></p>
+                </div>
+            </article>
+            <article class="blog-card scroll-animate">
+                <div class="blog-card-image" style="background-image: url('<?php echo obtenerDatoPorId($datos, 6, 'img'); ?>');"></div>
+                <div class="blog-card-content">
+                    <h3><?php echo obtenerDatoPorId($datos, 6, 'titulo'); ?></h3>
+                    <p><?php echo obtenerDatoPorId($datos, 6, 'textos'); ?></p>
+                </div>
+            </article>
+            <article class="blog-card scroll-animate">
+                <div class="blog-card-image" style="background-image: url('<?php echo obtenerDatoPorId($datos, 7, 'img'); ?>');"></div>
+                <div class="blog-card-content">
+                    <h3><?php echo obtenerDatoPorId($datos, 7, 'titulo'); ?></h3>
+                    <p><?php echo obtenerDatoPorId($datos, 7, 'textos'); ?></p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 
         <!-- Perfil Principal -->
         <section class="perfil-section">

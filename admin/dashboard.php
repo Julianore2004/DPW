@@ -1,4 +1,5 @@
-<?php
+
+    <?php
 session_start();
 if (!isset($_SESSION['admin_logueado'])) {
     header('Location: index.php');
@@ -58,6 +59,32 @@ if (isset($_POST['update_content'])) {
     }
 }
 
+// Manejar creación de nuevo registro
+if (isset($_POST['create_content'])) {
+    $titulo = $_POST['titulo'];
+    $textos = $_POST['textos'];
+    $img = $_POST['img'];
+    
+    if (crearRegistro($titulo, $textos, $img)) {
+        $mensaje = "Contenido creado correctamente";
+        $datos = obtenerDatos(); // Recargar datos
+    } else {
+        $error = "Error al crear el contenido";
+    }
+}
+
+// Manejar eliminación de registro
+if (isset($_POST['delete_content'])) {
+    $id = $_POST['id'];
+    
+    if (eliminarRegistro($id)) {
+        $mensaje = "Contenido eliminado correctamente";
+        $datos = obtenerDatos(); // Recargar datos
+    } else {
+        $error = "Error al eliminar el contenido";
+    }
+}
+
 // Obtener lista de imágenes disponibles
 function obtenerImagenes() {
     $imageDir = '../img/';
@@ -80,6 +107,7 @@ function obtenerImagenes() {
 
 $datos = obtenerDatos();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -88,7 +116,7 @@ $datos = obtenerDatos();
     <title>Panel Administrativo</title>
     <link rel="stylesheet" href="admin_styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
+<style>
         .upload-section {
             background: #f8f9fa;
             padding: 20px;
@@ -267,6 +295,7 @@ $datos = obtenerDatos();
             object-fit: cover;
         }
     </style>
+
 </head>
 <body>
     <div class="admin-container">
@@ -278,7 +307,8 @@ $datos = obtenerDatos();
             <nav class="admin-nav">
                 <ul>
                     <li><a href="#" class="active" onclick="showSection('content')"><i class="fas fa-edit"></i> Contenido</a></li>
-                    </ul>
+                    <li><a href="#" onclick="showSection('new-content')"><i class="fas fa-plus"></i> Nuevo Contenido</a></li>
+                </ul>
             </nav>
         </div>
         
@@ -323,61 +353,111 @@ $datos = obtenerDatos();
                     </form>
                 </div>
                 
-                <div class="section-header">
-                    <h2><i class="fas fa-edit"></i> Gestión de Contenido</h2>
-                    <p>Edita los textos e imágenes de tu sitio web</p>
+                <!-- Sección para crear nuevo contenido -->
+                <div id="new-content-section" class="section-content" style="display: none;">
+                    <div class="section-header">
+                        <h2><i class="fas fa-plus"></i> Crear Nuevo Contenido</h2>
+                        <p>Agrega un nuevo elemento de contenido</p>
+                    </div>
+                    
+                    <div class="content-card">
+                        <form method="POST" class="edit-form">
+                            <input type="hidden" name="create_content" value="1">
+                            
+                            <div class="form-group">
+                                <label><i class="fas fa-heading"></i> Título:</label>
+                                <input type="text" name="titulo" placeholder="Ingresa el título" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label><i class="fas fa-align-left"></i> Texto:</label>
+                                <textarea name="textos" rows="4" placeholder="Escribe el contenido aquí..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label><i class="fas fa-image"></i> Imagen:</label>
+                                <div class="image-input-group">
+                                    <input type="text" name="img" id="img_new" placeholder="Ruta de la imagen" required>
+                                    <button type="button" class="btn-browse" onclick="openImageSelector('new')">
+                                        <i class="fas fa-folder-open"></i> Seleccionar
+                                    </button>
+                                </div>
+                                <small><i class="fas fa-info-circle"></i> Selecciona una imagen de la galería</small>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-plus"></i> Crear Contenido
+                                </button>
+                                <button type="button" class="btn btn-secondary" onclick="resetForm(this)">
+                                    <i class="fas fa-times"></i> Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 
-                <div class="content-grid">
-                    <?php foreach ($datos as $item): ?>
-                        <div class="content-card">
-                            <div class="card-header">
-                                <h3><i class="fas fa-file-alt"></i> <?php echo ucfirst($item['titulo']); ?></h3>
-                                <span class="card-id">#<?php echo $item['id']; ?></span>
-                            </div>
-                            
-                            <div class="card-preview">
-                                <div class="image-preview">
-                                    <img src="../<?php echo $item['img']; ?>" alt="Preview" onerror="this.src='../img/default.jpg'">
-                                </div>
-                            </div>
-                            
-                            <form method="POST" class="edit-form">
-                                <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
-                                <input type="hidden" name="update_content" value="1">
-                                
-                                <div class="form-group">
-                                    <label><i class="fas fa-heading"></i> Título:</label>
-                                    <input type="text" name="titulo" value="<?php echo $item['titulo']; ?>" required>
+                <!-- Sección de gestión de contenido existente -->
+                <div id="content-section" class="section-content">
+                    <div class="section-header">
+                        <h2><i class="fas fa-edit"></i> Gestión de Contenido</h2>
+                        <p>Edita los textos e imágenes de tu sitio web</p>
+                    </div>
+                    
+                    <div class="content-grid">
+                        <?php foreach ($datos as $id => $item): ?>
+                            <div class="content-card">
+                                <div class="card-header">
+                                    <h3><i class="fas fa-file-alt"></i> <?php echo htmlspecialchars($item['titulo']); ?></h3>
+                                    <span class="card-id">#<?php echo $id; ?></span>
                                 </div>
                                 
-                                <div class="form-group">
-                                    <label><i class="fas fa-align-left"></i> Texto:</label>
-                                    <textarea name="textos" rows="4" placeholder="Escribe el contenido aquí..."><?php echo $item['textos']; ?></textarea>
+                                <div class="card-preview">
+                                    <div class="image-preview">
+                                        <img src="../<?php echo htmlspecialchars($item['img']); ?>" alt="Preview" onerror="this.src='../img/default.jpg'">
+                                    </div>
                                 </div>
                                 
-                                <div class="form-group">
-                                    <label><i class="fas fa-image"></i> Imagen:</label>
-                                    <div class="image-input-group">
-                                        <input type="text" name="img" id="img_<?php echo $item['id']; ?>" value="<?php echo $item['img']; ?>" required readonly>
-                                        <button type="button" class="btn-browse" onclick="openImageSelector(<?php echo $item['id']; ?>)">
-                                            <i class="fas fa-folder-open"></i> Seleccionar
+                                <form method="POST" class="edit-form">
+                                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                    <input type="hidden" name="update_content" value="1">
+                                    
+                                    <div class="form-group">
+                                        <label><i class="fas fa-heading"></i> Título:</label>
+                                        <input type="text" name="titulo" value="<?php echo htmlspecialchars($item['titulo']); ?>" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label><i class="fas fa-align-left"></i> Texto:</label>
+                                        <textarea name="textos" rows="4" placeholder="Escribe el contenido aquí..."><?php echo htmlspecialchars($item['textos']); ?></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label><i class="fas fa-image"></i> Imagen:</label>
+                                        <div class="image-input-group">
+                                            <input type="text" name="img" id="img_<?php echo $id; ?>" value="<?php echo htmlspecialchars($item['img']); ?>" required>
+                                            <button type="button" class="btn-browse" onclick="openImageSelector(<?php echo $id; ?>)">
+                                                <i class="fas fa-folder-open"></i> Seleccionar
+                                            </button>
+                                        </div>
+                                        <small><i class="fas fa-info-circle"></i> Selecciona una imagen de la galería</small>
+                                    </div>
+                                    
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-save"></i> Guardar Cambios
+                                        </button>
+                                        <button type="button" class="btn btn-secondary" onclick="resetForm(this)">
+                                            <i class="fas fa-undo"></i> Resetear
+                                        </button>
+                                        <button type="button" class="btn btn-danger" onclick="confirmDelete(<?php echo $id; ?>)">
+                                            <i class="fas fa-trash"></i> Eliminar
                                         </button>
                                     </div>
-                                    <small><i class="fas fa-info-circle"></i> Selecciona una imagen de la galería o sube una nueva</small>
-                                </div>
-                                
-                                <div class="form-actions">
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fas fa-save"></i> Guardar Cambios
-                                    </button>
-                                    <button type="button" class="btn btn-secondary" onclick="resetForm(this)">
-                                        <i class="fas fa-undo"></i> Resetear
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    <?php endforeach; ?>
+                                </form>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -398,11 +478,44 @@ $datos = obtenerDatos();
         </div>
     </div>
     
+    <!-- Modal de confirmación para eliminar -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Confirmar Eliminación</h3>
+                <span class="close" onclick="closeDeleteModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que quieres eliminar este contenido? Esta acción no se puede deshacer.</p>
+                <div class="modal-actions">
+                    <form method="POST" style="display: inline;">
+                        <input type="hidden" name="id" id="deleteId">
+                        <input type="hidden" name="delete_content" value="1">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="closeDeleteModal()">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script>
         let currentImageField = null;
         
         function showSection(section) {
-            // Función para cambiar secciones (para futuras expansiones)
+            // Ocultar todas las secciones
+            document.querySelectorAll('.section-content').forEach(sec => {
+                sec.style.display = 'none';
+            });
+            
+            // Mostrar la sección seleccionada
+            document.getElementById(section + '-section').style.display = 'block';
+            
+            // Actualizar navegación activa
             document.querySelectorAll('.admin-nav a').forEach(link => {
                 link.classList.remove('active');
             });
@@ -446,9 +559,14 @@ $datos = obtenerDatos();
         function selectImage(imgPath) {
             if (currentImageField) {
                 currentImageField.value = imgPath;
-                // Actualizar preview
-                const preview = currentImageField.closest('.content-card').querySelector('.image-preview img');
-                preview.src = '../' + imgPath;
+                // Actualizar preview si existe
+                const card = currentImageField.closest('.content-card');
+                if (card) {
+                    const preview = card.querySelector('.image-preview img');
+                    if (preview) {
+                        preview.src = '../' + imgPath;
+                    }
+                }
             }
             closeImageSelector();
         }
@@ -458,11 +576,24 @@ $datos = obtenerDatos();
             form.reset();
         }
         
+        function confirmDelete(id) {
+            document.getElementById('deleteId').value = id;
+            document.getElementById('deleteModal').style.display = 'block';
+        }
+        
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+        }
+        
         // Cerrar modal al hacer clic fuera
         window.onclick = function(event) {
-            const modal = document.getElementById('imageModal');
-            if (event.target === modal) {
+            const imageModal = document.getElementById('imageModal');
+            const deleteModal = document.getElementById('deleteModal');
+            if (event.target === imageModal) {
                 closeImageSelector();
+            }
+            if (event.target === deleteModal) {
+                closeDeleteModal();
             }
         }
         
@@ -472,7 +603,6 @@ $datos = obtenerDatos();
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    // Podrías mostrar un preview aquí si quieres
                     console.log('Archivo seleccionado:', file.name);
                 };
                 reader.readAsDataURL(file);
