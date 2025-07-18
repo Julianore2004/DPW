@@ -11,13 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-            min-height: 100vh;
-        }
+      
         
       
         
@@ -28,6 +22,7 @@
             padding: 50px 0 20px;
             position: relative;
             overflow: hidden;
+            margin-top: 20px;
         }
         
         footer::before {
