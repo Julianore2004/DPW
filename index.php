@@ -127,19 +127,93 @@
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        .slide {
-            display: none;
-            position: relative;
-            height: 400px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 40px;
-        }
+       .slide {
+    display: none;
+    position: relative;
+    min-height: 400px; /* Cambiado de height a min-height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+}
+.slide-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px; /* Añadido para controlar el ancho */
+    margin: 0 auto;
+}
+
+.slide-content h3 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2; /* Añadido para mejor espaciado */
+}
+
+.slide-content p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6; /* Añadido para mejor legibilidad */
+}
+
+/* Mejoras específicas para dispositivos móviles */
+@media (max-width: 768px) {
+    .slide {
+        min-height: 350px; /* Reducido para móviles */
+        padding: 40px 20px; /* Menos padding horizontal */
+    }
+    
+    .slide-content h3 {
+        font-size: 1.8em; /* Reducido para móviles */
+        margin-bottom: 15px;
+    }
+    
+    .slide-content p {
+        font-size: 1em; /* Reducido para móviles */
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        min-height: 300px;
+        padding: 30px 15px;
+    }
+    
+    .slide-content h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+    
+    .slide-content p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+}
+
+/* Ajuste para la navegación del slider en móviles */
+@media (max-width: 768px) {
+    .slider-nav {
+        bottom: 15px;
+    }
+    
+    .slider-dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Asegurar que el contenido sea visible */
+.slide.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
         .slide::before {
             content: '';
             position: absolute;
