@@ -289,37 +289,129 @@
             font-size: 1em;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .content-section {
-                padding: 60px 40px;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-
-            .organization-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .structure-section {
-                padding: 40px;
-            }
-
-            .hierarchy-level {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .departments-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hierarchy-item {
-                min-width: 100%;
-            }
+         /* Estilos adicionales para mejorar la responsividad en móviles */
+    @media (max-width: 768px) {
+      
+        .container {
+            margin: 5px;
+            border-radius: 10px;
         }
+
+        .content-section {
+            padding: 30px 15px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+        }
+
+        .intro-text {
+            font-size: 1em;
+        }
+
+        .organization-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .org-card {
+            padding: 20px;
+        }
+
+        .org-title {
+            font-size: 1.3em;
+        }
+
+        .org-description {
+            font-size: 0.9em;
+        }
+
+        .structure-section {
+            padding: 30px 15px;
+        }
+
+        .structure-title {
+            font-size: 1.5em;
+        }
+
+        .hierarchy-level {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hierarchy-item {
+            min-width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .hierarchy-title {
+            font-size: 1.1em;
+        }
+
+        .hierarchy-subtitle {
+            font-size: 0.9em;
+        }
+
+        .hierarchy-responsibilities {
+            font-size: 0.8em;
+        }
+
+        .departments-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .department-card {
+            padding: 20px;
+        }
+
+        .department-name {
+            font-size: 1.1em;
+        }
+
+        .department-description {
+            font-size: 0.9em;
+        }
+    }
+
+    /* Estilos para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .section-title {
+            font-size: 1.5em;
+        }
+
+        .intro-text {
+            font-size: 0.9em;
+        }
+
+        .org-title {
+            font-size: 1.1em;
+        }
+
+        .org-description {
+            font-size: 0.8em;
+        }
+
+        .structure-title {
+            font-size: 1.3em;
+        }
+
+        .hierarchy-title {
+            font-size: 1em;
+        }
+
+        .hierarchy-subtitle {
+            font-size: 0.8em;
+        }
+
+        .department-name {
+            font-size: 1em;
+        }
+
+        .department-description {
+            font-size: 0.8em;
+        }
+    }
 
         /* Animations */
         @keyframes fadeInUp {

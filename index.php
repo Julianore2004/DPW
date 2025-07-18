@@ -48,7 +48,6 @@
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
             position: relative;
             z-index: 1;
         }
@@ -60,7 +59,7 @@
         }
         .hero p {
             font-size: 1.3em;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -479,27 +478,104 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            .hero p {
-                font-size: 1.1em;
-            }
-            .section-title {
-                font-size: 2em;
-            }
-            .slide-content h3 {
-                font-size: 2em;
-            }
-            .slide-content p {
-                font-size: 1em;
-            }
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
+        /* Estilos adicionales para mejorar la responsividad en móviles */
+    @media (max-width: 768px) {
+      
+
+        .container {
+            padding: 0 10px;
         }
+
+        .hero {
+            height: 400px;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2em;
+        }
+
+        .hero p {
+            font-size: 1em;
+        }
+
+        .cta-button {
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+        }
+
+        .slider-container, .blog-grid, .competencias-grid, .empleabilidad-grid, .ambitos-grid {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide, .blog-card, .competencia-card, .empleabilidad-item, .ambito-card {
+            margin-bottom: 20px;
+        }
+
+        .perfil-text p {
+            font-size: 0.9em;
+        }
+
+        .blog-card-image {
+            height: 200px;
+        }
+
+        .blog-card-content {
+            padding: 15px;
+        }
+
+        .blog-card-content h3 {
+            font-size: 1.2em;
+        }
+
+        .blog-card-content p {
+            font-size: 0.9em;
+        }
+    }
+
+    /* Estilos para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .hero {
+            height: 300px;
+        }
+
+        .hero h1 {
+            font-size: 1.5em;
+        }
+
+        .hero p {
+            font-size: 0.9em;
+        }
+
+        .cta-button {
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+        }
+
+        .perfil-text p {
+            font-size: 0.8em;
+        }
+
+        .blog-card-content h3 {
+            font-size: 1em;
+        }
+
+        .blog-card-content p {
+            font-size: 0.8em;
+        }
+    }
         /* Call to Action */
         .cta-section {
             padding: 80px 0;

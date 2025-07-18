@@ -213,46 +213,119 @@
             color: #667eea;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 60px 40px;
-            }
+        /* Estilos adicionales para mejorar la responsividad en móviles */
+    @media (max-width: 768px) {
+        
 
-            .hero-title {
-                font-size: 2.5em;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2em;
-            }
-
-            .content-section {
-                padding: 60px 40px;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .library-section {
-                padding: 40px;
-            }
-
-            .service-card {
-                padding: 30px;
-            }
-
-            .library-icon {
-                font-size: 1.5em;
-                margin-right: 10px;
-            }
+        .container {
+            margin: 5px;
+            border-radius: 10px;
         }
 
+        .hero-section {
+            padding: 40px 20px;
+        }
+
+        .hero-title {
+            font-size: 2em;
+        }
+
+        .hero-subtitle {
+            font-size: 1em;
+        }
+
+        .content-section {
+            padding: 30px 15px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+        }
+
+        .intro-text {
+            font-size: 1em;
+        }
+
+        .library-section {
+            padding: 20px;
+        }
+
+        .library-title {
+            font-size: 1.5em;
+        }
+
+        .library-description {
+            font-size: 0.9em;
+        }
+
+        .services-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .service-card {
+            padding: 20px;
+        }
+
+        .service-number {
+            font-size: 2em;
+        }
+
+        .service-title {
+            font-size: 1.2em;
+        }
+
+        .service-description {
+            font-size: 0.9em;
+        }
+
+        .service-icon {
+            font-size: 2em;
+        }
+    }
+
+    /* Estilos para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.5em;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9em;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+        }
+
+        .intro-text {
+            font-size: 0.9em;
+        }
+
+        .library-title {
+            font-size: 1.3em;
+        }
+
+        .library-description {
+            font-size: 0.8em;
+        }
+
+        .service-number {
+            font-size: 1.5em;
+        }
+
+        .service-title {
+            font-size: 1.1em;
+        }
+
+        .service-description {
+            font-size: 0.8em;
+        }
+
+        .service-icon {
+            font-size: 1.5em;
+        }
+    }
         /* Animations */
         @keyframes fadeInUp {
             from {

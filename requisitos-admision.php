@@ -508,6 +508,108 @@
             opacity: 0.9;
             animation: fadeInUp 1s ease-out 0.3s both;
         }
+        /* Estilos adicionales para mejorar la responsividad en móviles */
+    @media (max-width: 768px) {
+       
+        .container {
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        .hero-section {
+            padding: 40px 20px;
+        }
+
+        .hero-title {
+            font-size: 2em;
+        }
+
+        .hero-subtitle {
+            font-size: 1em;
+        }
+
+        .content-section {
+            padding: 20px 10px;
+        }
+
+        .intro-section {
+            padding: 20px;
+        }
+
+        .intro-text {
+            font-size: 0.9em;
+        }
+
+        .documents-section, .fees-section, .accordion-section, .vacancies-section, .schedule-section {
+            padding: 20px;
+        }
+
+        .documents-title, .fees-title, .accordion-title, .vacancies-title, .schedule-title {
+            font-size: 1.2em;
+        }
+
+        .documents-list li {
+            font-size: 0.9em;
+            padding: 10px 0;
+        }
+
+        .fees-table, .vacancies-table, .schedule-table {
+            font-size: 0.8em;
+        }
+
+        .fees-table th, .fees-table td, .vacancies-table th, .vacancies-table td, .schedule-table th, .schedule-table td {
+            padding: 8px;
+        }
+
+        .accordion-header {
+            font-size: 1em;
+            padding: 15px;
+        }
+
+        .accordion-body {
+            font-size: 0.9em;
+            padding: 15px;
+        }
+
+        .accordion-body li {
+            font-size: 0.8em;
+        }
+    }
+
+    /* Estilos para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.5em;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9em;
+        }
+
+        .intro-text {
+            font-size: 0.8em;
+        }
+
+        .documents-title, .fees-title, .accordion-title, .vacancies-title, .schedule-title {
+            font-size: 1em;
+        }
+
+        .documents-list li {
+            font-size: 0.8em;
+        }
+
+        .fees-table, .vacancies-table, .schedule-table {
+            font-size: 0.7em;
+        }
+
+        .accordion-header {
+            font-size: 0.9em;
+        }
+
+        .accordion-body {
+            font-size: 0.8em;
+        }
+    }
     </style>
 </head>
 

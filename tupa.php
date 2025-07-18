@@ -368,62 +368,182 @@
             color: #555;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 60px 40px;
-            }
-
-            .hero-title {
-                font-size: 2.5em;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2em;
-            }
-
-            .content-section {
-                padding: 60px 40px;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-
-            .tupa-info-section {
-                padding: 40px;
-            }
-
-            .tupa-title {
-                font-size: 2em;
-            }
-
-            .cta-section {
-                padding: 60px 40px;
-            }
-
-            .cta-title {
-                font-size: 2em;
-            }
-
-            .tupa-button {
-                padding: 15px 30px;
-                font-size: 1.1em;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .info-cards {
-                grid-template-columns: 1fr;
-            }
+          /* Estilos adicionales para mejorar la responsividad en móviles */
+    @media (max-width: 768px) {
+      
+        .container {
+            margin: 5px;
+            border-radius: 10px;
         }
 
+        .hero-section {
+            padding: 40px 20px;
+        }
+
+        .hero-title {
+            font-size: 2em;
+        }
+
+        .hero-subtitle {
+            font-size: 1em;
+        }
+
+        .content-section {
+            padding: 30px 15px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+        }
+
+        .intro-text {
+            font-size: 1em;
+        }
+
+        .tupa-info-section {
+            padding: 20px;
+        }
+
+        .tupa-title {
+            font-size: 1.5em;
+        }
+
+        .tupa-subtitle {
+            font-size: 1em;
+        }
+
+        .tupa-description {
+            font-size: 0.9em;
+        }
+
+        .features-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .feature-card {
+            padding: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.1em;
+        }
+
+        .feature-description {
+            font-size: 0.9em;
+        }
+
+        .benefits-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .benefit-item {
+            padding: 20px;
+        }
+
+        .benefit-text {
+            font-size: 0.9em;
+        }
+
+        .cta-section {
+            padding: 30px 15px;
+        }
+
+        .cta-title {
+            font-size: 1.5em;
+        }
+
+        .cta-text {
+            font-size: 1em;
+        }
+
+        .tupa-button {
+            padding: 10px 25px;
+            font-size: 1em;
+        }
+
+        .info-cards {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .info-card {
+            padding: 20px;
+        }
+
+        .info-card-title {
+            font-size: 1.1em;
+        }
+
+        .info-card-text {
+            font-size: 0.9em;
+        }
+    }
+
+    /* Estilos para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.5em;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9em;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+        }
+
+        .intro-text {
+            font-size: 0.9em;
+        }
+
+        .tupa-title {
+            font-size: 1.3em;
+        }
+
+        .tupa-subtitle {
+            font-size: 0.9em;
+        }
+
+        .tupa-description {
+            font-size: 0.8em;
+        }
+
+        .feature-title {
+            font-size: 1em;
+        }
+
+        .feature-description {
+            font-size: 0.8em;
+        }
+
+        .benefit-text {
+            font-size: 0.8em;
+        }
+
+        .cta-title {
+            font-size: 1.3em;
+        }
+
+        .cta-text {
+            font-size: 0.9em;
+        }
+
+        .tupa-button {
+            padding: 8px 20px;
+            font-size: 0.9em;
+        }
+
+        .info-card-title {
+            font-size: 1em;
+        }
+
+        .info-card-text {
+            font-size: 0.8em;
+        }
+    }
         /* Animations */
         @keyframes fadeInUp {
             from {

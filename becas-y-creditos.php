@@ -346,40 +346,139 @@
             top: 10px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .content-section {
-                padding: 60px 30px;
-            }
-
-            .hero-section {
-                padding: 60px 30px;
-            }
-
-            .hero-title {
-                font-size: 2.5em;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-
-            .students-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .program-info {
-                padding: 30px;
-            }
-
-            .scholarship-details {
-                flex-direction: column;
-            }
-
-            .description-text {
-                text-align: left;
-            }
+          /* Estilos adicionales para mejorar la responsividad en móviles */
+    @media (max-width: 768px) {
+      
+        .container {
+            margin: 5px;
+            border-radius: 10px;
         }
+
+        .hero-section {
+            padding: 40px 20px;
+        }
+
+        .hero-title {
+            font-size: 2em;
+        }
+
+        .hero-subtitle {
+            font-size: 1em;
+        }
+
+        .content-section {
+            padding: 30px 15px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+        }
+
+        .program-info {
+            padding: 20px;
+        }
+
+        .program-title {
+            font-size: 1.5em;
+        }
+
+        .program-subtitle {
+            font-size: 1.1em;
+        }
+
+        .description-text {
+            font-size: 0.9em;
+        }
+
+        .students-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .student-card {
+            padding: 20px;
+        }
+
+        .student-name {
+            font-size: 1.1em;
+        }
+
+        .student-semester {
+            font-size: 1em;
+        }
+
+        .scholarship-details {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .scholarship-item {
+            margin-bottom: 15px;
+        }
+
+        .scholarship-icon {
+            font-size: 2em;
+        }
+
+        .scholarship-label {
+            font-size: 1em;
+        }
+
+        .scholarship-value {
+            font-size: 1.5em;
+        }
+
+        .requirements-list li {
+            font-size: 0.9em;
+        }
+    }
+
+    /* Estilos para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.5em;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9em;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+        }
+
+        .program-title {
+            font-size: 1.3em;
+        }
+
+        .program-subtitle {
+            font-size: 1em;
+        }
+
+        .description-text {
+            font-size: 0.8em;
+        }
+
+        .student-name {
+            font-size: 1em;
+        }
+
+        .student-semester {
+            font-size: 0.9em;
+        }
+
+        .scholarship-label {
+            font-size: 0.9em;
+        }
+
+        .scholarship-value {
+            font-size: 1.3em;
+        }
+
+        .requirements-list li {
+            font-size: 0.8em;
+        }
+    }
 
         /* Animations */
         @keyframes fadeInUp {

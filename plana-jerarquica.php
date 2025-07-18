@@ -335,41 +335,132 @@
             font-size: 0.8em;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .content-section {
-                padding: 60px 30px;
-            }
+         /* Estilos adicionales para mejorar la responsividad en móviles */
+    @media (max-width: 768px) {
+        
 
-            .hero-section {
-                padding: 60px 30px;
-            }
-
-            .hero-title {
-                font-size: 2.5em;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-
-            .person-card {
-                min-width: 100%;
-                max-width: 100%;
-            }
-
-            .level-coordinator {
-                min-width: 100%;
-            }
-
-            .organizational-chart {
-                padding: 40px 20px;
-            }
-
-            .roles-grid {
-                grid-template-columns: 1fr;
-            }
+        .container {
+            margin: 5px;
+            border-radius: 10px;
         }
+
+        .hero-section {
+            padding: 40px 20px;
+        }
+
+        .hero-title {
+            font-size: 2em;
+        }
+
+        .hero-subtitle {
+            font-size: 1em;
+        }
+
+        .content-section {
+            padding: 30px 15px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+        }
+
+        .hierarchy-container {
+            gap: 20px;
+        }
+
+        .hierarchy-level {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .person-card {
+            min-width: 100%;
+            max-width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .person-avatar {
+            width: 70px;
+            height: 70px;
+            font-size: 1.5em;
+        }
+
+        .person-name {
+            font-size: 1.1em;
+        }
+
+        .person-position {
+            font-size: 0.9em;
+        }
+
+        .organizational-chart {
+            padding: 30px 15px;
+        }
+
+        .chart-title {
+            font-size: 1.5em;
+        }
+
+        .chart-description {
+            font-size: 1em;
+        }
+
+        .roles-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .role-card {
+            padding: 20px;
+        }
+
+        .role-title {
+            font-size: 1.1em;
+        }
+
+        .role-description {
+            font-size: 0.9em;
+        }
+    }
+
+    /* Estilos para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.5em;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9em;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+        }
+
+        .person-name {
+            font-size: 1em;
+        }
+
+        .person-position {
+            font-size: 0.8em;
+        }
+
+        .chart-title {
+            font-size: 1.3em;
+        }
+
+        .chart-description {
+            font-size: 0.9em;
+        }
+
+        .role-title {
+            font-size: 1em;
+        }
+
+        .role-description {
+            font-size: 0.8em;
+        }
+    }
 
         /* Animations */
         @keyframes fadeInUp {

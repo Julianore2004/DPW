@@ -259,37 +259,109 @@
             font-weight: 600;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 60px 40px;
-            }
-
-            .hero-title {
-                font-size: 2.5em;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2em;
-            }
-
-            .content-section {
-                padding: 60px 40px;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-
-            .minedu-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .minedu-section, .institutional-section {
-                padding: 40px;
-            }
+        /* Estilos adicionales para mejorar la responsividad en móviles */
+    @media (max-width: 768px) {
+               .container {
+            margin: 5px;
+            border-radius: 10px;
         }
 
+        .hero-section {
+            padding: 40px 20px;
+        }
+
+        .hero-title {
+            font-size: 2em;
+        }
+
+        .hero-subtitle {
+            font-size: 1em;
+        }
+
+        .content-section {
+            padding: 30px 15px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+        }
+
+        .intro-text {
+            font-size: 1em;
+        }
+
+        .systems-title {
+            font-size: 1.5em;
+        }
+
+        .systems-description {
+            font-size: 0.9em;
+        }
+
+        .minedu-grid, .links-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .link-card {
+            padding: 20px;
+        }
+
+        .link-icon {
+            font-size: 2em;
+        }
+
+        .link-title {
+            font-size: 1.1em;
+        }
+
+        .link-description {
+            font-size: 0.9em;
+        }
+
+        .external-link {
+            font-size: 1em;
+        }
+    }
+
+    /* Estilos para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.5em;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9em;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+        }
+
+        .intro-text {
+            font-size: 0.9em;
+        }
+
+        .systems-title {
+            font-size: 1.3em;
+        }
+
+        .systems-description {
+            font-size: 0.8em;
+        }
+
+        .link-title {
+            font-size: 1em;
+        }
+
+        .link-description {
+            font-size: 0.8em;
+        }
+
+        .link-icon {
+            font-size: 1.5em;
+        }
+    }
         /* Animations */
         @keyframes fadeInUp {
             from {

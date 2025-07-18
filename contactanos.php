@@ -317,51 +317,141 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 60px 40px;
-            }
+         /* Estilos adicionales para mejorar la responsividad en móviles */
+    @media (max-width: 768px) {
+        
 
-            .hero-title {
-                font-size: 2.5em;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2em;
-            }
-
-            .content-section {
-                padding: 60px 40px;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contact-icon {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-
-            .social-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .social-section {
-                padding: 40px;
-            }
+        .container {
+            margin: 5px;
+            border-radius: 10px;
         }
+
+        .hero-section {
+            padding: 40px 20px;
+        }
+
+        .hero-title {
+            font-size: 2em;
+        }
+
+        .hero-subtitle {
+            font-size: 1em;
+        }
+
+        .content-section {
+            padding: 30px 15px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+        }
+
+        .intro-text {
+            font-size: 1em;
+        }
+
+        .contact-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .contact-item {
+            flex-direction: column;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .contact-icon {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+
+        .contact-details h4 {
+            font-size: 1.1em;
+        }
+
+        .contact-details p {
+            font-size: 0.9em;
+        }
+
+        .map-container {
+            height: 300px;
+        }
+
+        .social-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .social-item {
+            padding: 15px;
+        }
+
+        .social-icon {
+            font-size: 2em;
+        }
+
+        .social-label {
+            font-size: 1em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            font-size: 0.9em;
+        }
+
+        .submit-btn {
+            padding: 12px;
+            font-size: 1em;
+        }
+    }
+
+    /* Estilos para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.5em;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9em;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+        }
+
+        .intro-text {
+            font-size: 0.9em;
+        }
+
+        .contact-details h4 {
+            font-size: 1em;
+        }
+
+        .contact-details p {
+            font-size: 0.8em;
+        }
+
+        .social-icon {
+            font-size: 1.5em;
+        }
+
+        .social-label {
+            font-size: 0.9em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 10px;
+            font-size: 0.8em;
+        }
+
+        .submit-btn {
+            padding: 10px;
+            font-size: 0.9em;
+        }
+    }
 
         /* Animations */
         @keyframes fadeInUp {
