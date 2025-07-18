@@ -361,56 +361,103 @@
             font-weight: 500;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 60px 40px;
-            }
+       /* Estilos adicionales para mejorar la responsividad en móviles */
+    @media (max-width: 768px) {
 
-            .hero-title {
-                font-size: 2.5em;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2em;
-            }
-
-            .content-section {
-                padding: 60px 40px;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-section {
-                padding: 40px;
-            }
-
-            .services-list {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .cta-section {
-                padding: 60px 40px;
-            }
-
-            .cta-title {
-                font-size: 2em;
-            }
-
-            .library-info {
-                padding: 30px;
-            }
+        .container {
+            margin: 5px;
+            border-radius: 10px;
         }
+
+        .hero-section {
+            padding: 40px 20px;
+        }
+
+        .hero-title {
+            font-size: 2em;
+        }
+
+        .hero-subtitle {
+            font-size: 1em;
+        }
+
+        .content-section, .objectives-section, .curriculum-section {
+            padding: 30px 15px;
+        }
+
+        .section-title, .objectives-title, .curriculum-title {
+            font-size: 1.5em;
+        }
+
+        .intro-text {
+            font-size: 1em;
+        }
+
+        .features-grid, .semester-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .feature-card, .semester-card {
+            padding: 20px;
+        }
+
+        .objective-header {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .objective-number {
+            margin-bottom: 10px;
+        }
+
+        .stats-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2em;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+        }
+
+        .curriculum-table th, .curriculum-table td {
+            padding: 8px;
+            font-size: 0.8em;
+        }
+    }
+
+    /* Estilos para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 1.5em;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9em;
+        }
+
+        .section-title, .objectives-title, .curriculum-title {
+            font-size: 1.3em;
+        }
+
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .stat-number {
+            font-size: 1.5em;
+        }
+    }
 
         /* Animations */
         @keyframes fadeInUp {

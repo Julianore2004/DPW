@@ -96,7 +96,7 @@
 
         .faculty-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 60px;
         }
@@ -152,10 +152,12 @@
             font-weight: bold;
             margin-right: 20px;
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            flex-shrink: 0;
         }
 
         .faculty-info {
             flex: 1;
+            min-width: 0;
         }
 
         .faculty-name {
@@ -163,6 +165,7 @@
             font-weight: 700;
             color: #2c3e50;
             margin-bottom: 5px;
+            word-wrap: break-word;
         }
 
         .faculty-period {
@@ -208,6 +211,7 @@
             font-weight: 500;
             box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
             transition: all 0.3s ease;
+            word-break: break-word;
         }
 
         .subject-tag:hover {
@@ -270,7 +274,7 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
@@ -307,75 +311,7 @@
             color: #666;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .faculty-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .faculty-card {
-                padding: 25px;
-            }
-
-            .faculty-header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .faculty-avatar {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-
-            .header {
-                padding: 40px 20px;
-            }
-
-            .header-title {
-                font-size: 2.2em;
-            }
-
-            .content-section {
-                padding: 40px 20px;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats-title {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .scroll-animate.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-         .hero-section {
+        .hero-section {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
             color: white;
             padding: 80px 60px;
@@ -422,25 +358,293 @@
             opacity: 0.9;
             animation: fadeInUp 1s ease-out 0.3s both;
         }
+
+        /* Responsive Design - Tablet */
+        @media (max-width: 1024px) {
+            .faculty-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 25px;
+            }
+            
+            .hero-title {
+                font-size: 3em;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Responsive Design - Mobile */
+        @media (max-width: 768px) {
+            
+            
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .faculty-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .faculty-card {
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            .faculty-header {
+                flex-direction: column;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .faculty-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+                width: 60px;
+                height: 60px;
+                font-size: 1.5em;
+            }
+
+            .faculty-name {
+                font-size: 1.2em;
+                text-align: center;
+            }
+
+            .faculty-period {
+                font-size: 0.8em;
+                padding: 4px 10px;
+            }
+
+            .subjects-title {
+                font-size: 1em;
+                justify-content: center;
+            }
+
+            .subjects-list {
+                justify-content: center;
+            }
+
+            .subject-tag {
+                font-size: 0.75em;
+                padding: 6px 12px;
+            }
+
+            .cv-button {
+                padding: 10px 20px;
+                font-size: 0.8em;
+            }
+
+            .hero-section {
+                padding: 50px 30px;
+            }
+
+            .hero-title {
+                font-size: 2.2em;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero-subtitle {
+                font-size: 1em;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header-title {
+                font-size: 2.2em;
+            }
+
+            .header-subtitle {
+                font-size: 1em;
+            }
+
+            .content-section {
+                padding: 40px 20px;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+                margin-bottom: 30px;
+            }
+
+            .stats-section {
+                padding: 40px 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .stats-title {
+                font-size: 1.6em;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .stat-item {
+                padding: 20px;
+            }
+
+            .stat-number {
+                font-size: 2em;
+            }
+
+            .stat-label {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Responsive Design - Small Mobile */
+        @media (max-width: 480px) {
+            .container {
+                margin: 5px;
+                border-radius: 10px;
+            }
+            
+            .faculty-card {
+                padding: 15px;
+            }
+            
+            .hero-section {
+                padding: 40px 20px;
+            }
+            
+            .hero-title {
+                font-size: 1.8em;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.9em;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .faculty-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .subject-tag {
+                font-size: 0.7em;
+                padding: 5px 10px;
+            }
+            
+            .cv-button {
+                padding: 8px 16px;
+                font-size: 0.75em;
+            }
+        }
+
+        /* Responsive Design - Extra Small Mobile */
+        @media (max-width: 320px) {
+            .hero-title {
+                font-size: 1.5em;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.8em;
+            }
+            
+            .section-title {
+                font-size: 1.3em;
+            }
+            
+            .faculty-name {
+                font-size: 1.1em;
+            }
+            
+            .stats-title {
+                font-size: 1.4em;
+            }
+            
+            .stat-number {
+                font-size: 1.8em;
+            }
+            
+            .stat-label {
+                font-size: 0.8em;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) {
+            .faculty-card:hover {
+                transform: none;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+            
+            .subject-tag:hover {
+                transform: none;
+                box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+            }
+            
+            .cv-button:hover {
+                transform: none;
+                box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            }
+            
+            .stat-item:hover {
+                transform: none;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+        }
     </style>
 </head>
 <body>
     
- <!-- Header -->
+    <!-- Header -->
     <?php include 'includes/header.php'; ?>
 
     <div class="container">
-         <section class="hero-section">
+        <section class="hero-section">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    <i class=""></i>
+                    <i class="fas fa-chalkboard-teacher"></i>
                     Plana Docente
                 </h1>
                 <p class="hero-subtitle">Programa de Estudios de Diseño y Programación Web</p>
             </div>
         </section>
        
-
         <section class="content-section">
             <h2 class="section-title fade-in-up">Nuestros Docentes</h2>
             
@@ -463,7 +667,6 @@
                         </h4>
                         <div class="subjects-list">
                             <span class="subject-tag">Marketing digital</span>
-                           
                         </div>
                     </div>
                     
@@ -473,8 +676,7 @@
                             Ver Hoja de Vida
                         </a>
                     </div>
-                    
-                 </div>
+                </div>
 
                 <div class="faculty-card scroll-animate">
                     <div class="faculty-header">
@@ -494,7 +696,7 @@
                         </h4>
                         <div class="subjects-list">
                             <span class="subject-tag">Fundamentos de Programación</span>
-                            <span class="subject-tag">Pruebas de software </span>
+                            <span class="subject-tag">Pruebas de software</span>
                         </div>
                     </div>
                     
@@ -523,9 +725,9 @@
                             Unidades Didácticas
                         </h4>
                         <div class="subjects-list">
-                            <span class="subject-tag">Redes e internet </span>
-                            <span class="subject-tag">Gestion y administracion de sitios web</span>
-                            <span class="subject-tag">Diagramacion digital</span>
+                            <span class="subject-tag">Redes e internet</span>
+                            <span class="subject-tag">Gestión y administración de sitios web</span>
+                            <span class="subject-tag">Diagramación digital</span>
                         </div>
                     </div>
                     
@@ -554,10 +756,10 @@
                             Unidades Didácticas
                         </h4>
                         <div class="subjects-list">
-                            <span class="subject-tag">Comunicacion Oral </span>
-                            <span class="subject-tag">Programacion de aplicaciones web</span>
+                            <span class="subject-tag">Comunicación Oral</span>
+                            <span class="subject-tag">Programación de aplicaciones web</span>
                             <span class="subject-tag">Diseño de soluciones web</span>
-                            <span class="subject-tag">Solucion de problemas</span>
+                            <span class="subject-tag">Solución de problemas</span>
                         </div>
                     </div>
                     
@@ -586,8 +788,8 @@
                             Unidades Didácticas
                         </h4>
                         <div class="subjects-list">
-                            <span class="subject-tag">Analisis y diseño de sistemas </span>
-                            <span class="subject-tag">Introduccion de base de datos</span>
+                            <span class="subject-tag">Análisis y diseño de sistemas</span>
+                            <span class="subject-tag">Introducción de base de datos</span>
                             <span class="subject-tag">Diseño de interfaces web</span>
                         </div>
                     </div>
@@ -597,7 +799,7 @@
                             <i class="fas fa-eye"></i>
                             Ver Hoja de Vida
                         </a>
-                      </div>
+                    </div>
                 </div>
 
                 <div class="faculty-card scroll-animate">
@@ -618,17 +820,17 @@
                         </h4>
                         <div class="subjects-list">
                             <span class="subject-tag">Arquitectura de computadoras</span>
-                            <span class="subject-tag">Administracion de base de datos </span>
-                            <span class="subject-tag">Programacion de aplicaciones moviles</span>
+                            <span class="subject-tag">Administración de base de datos</span>
+                            <span class="subject-tag">Programación de aplicaciones móviles</span>
                         </div>
                     </div>
                     
                     <div class="cv-section">
-                        <a href="https://iestphuanta.edu.pe/wp-content/uploads/2025/05/FICHA_DE_POSTULANTE_ALEGRIA_CRISTHIAN.pdf" class="cv-button">
+                        <a href="https://iestphuanta.edu.pe/wp-content/uploads/2025/05/FICHA_DE_POSTULANTE_JARA_JORGE.pdf" class="cv-button">
                             <i class="fas fa-eye"></i>
                             Ver Hoja de Vida
                         </a>
-                      </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -725,9 +927,26 @@
         // Initialize counter animation
         animateCounters();
 
-        
+        // Smooth scrolling for better mobile experience
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Add touch event handlers for better mobile interaction
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.faculty-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('touchend', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
     </script>
-<!-- Footer -->
+    
+    <!-- Footer -->
     <?php include 'includes/footer.php'; ?>
 </body>
 </html>

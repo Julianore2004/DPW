@@ -262,7 +262,7 @@
         
         /* RESPONSIVE STYLES */
         @media (max-width: 768px) {
-            
+       
             
             .header-content {
                 height: 70px;
