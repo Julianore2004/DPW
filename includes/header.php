@@ -19,7 +19,6 @@
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
-           
         }
         
         header {
@@ -50,6 +49,13 @@
             align-items: center;
             gap: 15px;
             z-index: 1001;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
         }
         
         .logo-img img {
@@ -61,7 +67,7 @@
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
         }
         
-        .logo-img:hover img {
+        .logo:hover .logo-img img {
             transform: scale(1.1) rotate(5deg);
         }
         
@@ -262,8 +268,6 @@
         
         /* RESPONSIVE STYLES */
         @media (max-width: 768px) {
-       
-            
             .header-content {
                 height: 70px;
                 padding: 0 15px;
@@ -464,15 +468,15 @@
     <div class="scroll-indicator"></div>
     <header>
         <div class="header-content">
-            <div  class="logo">
-                <div  class="logo-img">
-                    <img  src="img/LOGODPW.jpg" alt="Logo">
+            <a href="index" class="logo">
+                <div class="logo-img">
+                    <img src="img/LOGODPW.jpg" alt="Logo">
                 </div>
                 <span class="logo-text">
                     <span class="logo-text-light">DISEÑO Y</span><br>
                     <span class="logo-text-bold">PROGRAMACION WEB</span>
                 </span>
-            </div>
+            </a>
             <nav>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -570,7 +574,6 @@
             </nav>
         </div>
     </header>
-
    
     <script>
         // Smooth scroll

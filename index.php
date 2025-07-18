@@ -961,7 +961,7 @@
             showSlide(currentSlideIndex);
         }
         // Avance automático de slides
-        setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 8000);
         // Animaciones de scroll
         function animateOnScroll() {
             const elements = document.querySelectorAll('.scroll-animate');
